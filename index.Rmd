@@ -6,7 +6,7 @@ documentclass: book
 bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "5085c/6015c Introduction to Lanscape Ecology & GIS R Markdown"
 ---
 
 # Syllabus {-}
@@ -28,14 +28,14 @@ description: "This is a minimal example of using the bookdown package to write a
     + Notebooks with theory, practices, code samples, etc.
     + Videos with detailed explanation about the topics.
     + Lab assignment weekly starting on week 2.
-* Lab sessions tutorials and materials can be found on https://maurosc3ner.github.io/ .
+* Lab sessions tutorials and materials can be found on https://maurosc3ner.github.io/6085cintrolandscapeecology/.
 
 ## Content {-}
 
 The goal of this section is to exemplify the role of R in analysis of spatial data in landscape ecology applications. At the beginning, we will review the fundamentals of the use of R within the RStudio interface, basic data structures and operations. Then, we will explore the capabilities of plotting information with R, and finally the use of the library leaflet integrated with RStudio for visualizing spatial data. This brief introduction will help us in understanding the second part of the course, when we will analyze landscape ecology problems and using advance scripts to compute and simulate interesting scenarios of landscape disturbances.
 
 ## Schedule {-}
-```{r echo=FALSE, results='asis'}
+```{r echo=FALSE, results='asis', warning=FALSE}
 schedule <- c( "",
 "**Week 1 - No assignment**",
 "Introduction to R programming language – Getting familiar with R Studio interface, types of data structures, basic operations.",
