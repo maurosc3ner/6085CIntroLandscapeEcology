@@ -124,6 +124,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.5.3" data-path="week1.html"><a href="week1.html#task-3.-creating-vectors"><i class="fa fa-check"></i><b>1.5.3</b> Task 3. Creating vectors</a></li>
 <li class="chapter" data-level="1.5.4" data-path="week1.html"><a href="week1.html#task-4.-operations-between-two-or-more-vectors"><i class="fa fa-check"></i><b>1.5.4</b> Task 4. Operations between two or more vectors</a></li>
 </ul></li>
+<li class="chapter" data-level="1.6" data-path="week1.html"><a href="week1.html#project-1."><i class="fa fa-check"></i><b>1.6</b> Project 1.</a></li>
+<li class="chapter" data-level="1.7" data-path="week1.html"><a href="week1.html#project-2."><i class="fa fa-check"></i><b>1.7</b> Project 2.</a></li>
+<li class="chapter" data-level="1.8" data-path="week1.html"><a href="week1.html#project-3."><i class="fa fa-check"></i><b>1.8</b> Project 3.</a></li>
+<li class="chapter" data-level="1.9" data-path="week1.html"><a href="week1.html#project-4."><i class="fa fa-check"></i><b>1.9</b> Project 4.</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="mailto:correaem@mail.uc.edu" target="blank">contact</a></li>
@@ -306,17 +310,17 @@ friends &lt;-<span class="st"> </span><span class="kw">data.frame</span>( <span 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="fl">1.5</span>                      <span class="co"># Declaration of a numeric value</span>
 b &lt;-<span class="st"> </span><span class="fl">4.0</span>                      <span class="co"># Declaration of another numeric value</span>
 
-a <span class="op">+</span><span class="st"> </span>b                         <span class="co"># Summation</span></code></pre></div>
+a +<span class="st"> </span>b                         <span class="co"># Summation</span></code></pre></div>
 <pre><code>## [1] 5.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b <span class="op">-</span><span class="st"> </span>a                         <span class="co"># Substraction</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b -<span class="st"> </span>a                         <span class="co"># Substraction</span></code></pre></div>
 <pre><code>## [1] 2.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b <span class="op">*</span><span class="st"> </span>a                         <span class="co"># Multiplication</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b *<span class="st"> </span>a                         <span class="co"># Multiplication</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b <span class="op">/</span><span class="st"> </span>a                         <span class="co"># Division</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b /<span class="st"> </span>a                         <span class="co"># Division</span></code></pre></div>
 <pre><code>## [1] 2.666667</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b <span class="op">**</span><span class="st"> </span><span class="dv">2</span>                        <span class="co"># Exponent</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b **<span class="st"> </span><span class="dv">2</span>                        <span class="co"># Exponent</span></code></pre></div>
 <pre><code>## [1] 16</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>                        <span class="co"># Modulus operation</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b %%<span class="st"> </span><span class="dv">2</span>                        <span class="co"># Modulus operation</span></code></pre></div>
 <pre><code>## [1] 0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Declaration of a vector of numeric values</span>
 vector_values &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">23</span>, <span class="dv">17</span>, <span class="dv">13</span>, <span class="dv">9</span>) 
@@ -327,32 +331,32 @@ vector_values &lt;-<span class="st"> </span><span class="kw">c</span>(<span clas
 <pre><code>## [1] 103</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(vector_values)         <span class="co"># Computing the average of the set of values.</span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values <span class="op">+</span><span class="st"> </span><span class="dv">3</span>             <span class="co"># Add or substract a number to each value on the set of values.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values +<span class="st"> </span><span class="dv">3</span>             <span class="co"># Add or substract a number to each value on the set of values.</span></code></pre></div>
 <pre><code>## [1]  4  7 12 15 18 26 20 16 12</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values <span class="op">*</span><span class="st"> </span><span class="dv">5</span>             <span class="co"># Multiply a number to each value on the set of values.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values *<span class="st"> </span><span class="dv">5</span>             <span class="co"># Multiply a number to each value on the set of values.</span></code></pre></div>
 <pre><code>## [1]   5  20  45  60  75 115  85  65  45</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values <span class="op">%%</span><span class="st"> </span><span class="dv">2</span>            <span class="co"># Apply a modulo operation over the set of values.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values %%<span class="st"> </span><span class="dv">2</span>            <span class="co"># Apply a modulo operation over the set of values.</span></code></pre></div>
 <pre><code>## [1] 1 0 1 0 1 1 1 1 1</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values[<span class="dv">1</span>]              <span class="co"># Indexing vectors in R (find the ith element).</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values[<span class="dv">5</span>]              <span class="co"># Suppose that we want to find the fifth element.</span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values[<span class="op">-</span><span class="dv">2</span>]             <span class="co"># Get the vector without the second element.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values[-<span class="dv">2</span>]             <span class="co"># Get the vector without the second element.</span></code></pre></div>
 <pre><code>## [1]  1  9 12 15 23 17 13  9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]            <span class="co"># Get the first three elements of the vector.</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values[<span class="dv">1</span>:<span class="dv">3</span>]            <span class="co"># Get the first three elements of the vector.</span></code></pre></div>
 <pre><code>## [1] 1 4 9</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>)]       <span class="co"># Get the elements 1st, 3rd and 5th of the vector.</span></code></pre></div>
 <pre><code>## [1]  1  9 15</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values <span class="op">==</span><span class="st"> </span><span class="dv">9</span>            <span class="co"># Check if the vector values are equals to 9</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_values ==<span class="st"> </span><span class="dv">9</span>            <span class="co"># Check if the vector values are equals to 9</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(vector_values <span class="op">==</span><span class="st"> </span><span class="dv">9</span>)     <span class="co"># where are this value</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(vector_values ==<span class="st"> </span><span class="dv">9</span>)     <span class="co"># where are this value</span></code></pre></div>
 <pre><code>## [1] 3 9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(vector_values <span class="op">==</span><span class="st"> </span><span class="dv">9</span>)       <span class="co"># How many 9&#39;s are in the vector</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(vector_values ==<span class="st"> </span><span class="dv">9</span>)       <span class="co"># How many 9&#39;s are in the vector</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 </div>
 <div id="task-3.-creating-vectors" class="section level3">
 <h3><span class="header-section-number">1.5.3</span> Task 3. Creating vectors</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new_vector &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span>            <span class="co"># Create a vector from 1 to 10</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new_vector &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">10</span>            <span class="co"># Create a vector from 1 to 10</span>
 new_vector</code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new_vector &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">5</span>, <span class="dv">10</span>)      <span class="co"># Create a vector of 10 5&#39;s (ten times five)</span>
@@ -376,13 +380,13 @@ vector2</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector_result &lt;-<span class="st"> </span><span class="kw">c</span>(vector1, vector2) <span class="co"># Create a vector with the combination of vector1 and vector2</span>
 vector_result</code></pre></div>
 <pre><code>##  [1]  2  4  6  8 10 11 13 15 17 19</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 <span class="op">+</span><span class="st"> </span>vector2             <span class="co"># Addition of two vectors</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 +<span class="st"> </span>vector2             <span class="co"># Addition of two vectors</span></code></pre></div>
 <pre><code>## [1] 13 17 21 25 29</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 <span class="op">-</span><span class="st"> </span>vector2             <span class="co"># Substraction of two vectors</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 -<span class="st"> </span>vector2             <span class="co"># Substraction of two vectors</span></code></pre></div>
 <pre><code>## [1] -9 -9 -9 -9 -9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 <span class="op">*</span><span class="st"> </span>vector2             <span class="co"># Multiplication of two vectors</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 *<span class="st"> </span>vector2             <span class="co"># Multiplication of two vectors</span></code></pre></div>
 <pre><code>## [1]  22  52  90 136 190</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 <span class="op">/</span><span class="st"> </span>vector2             <span class="co"># division of two vectors</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector1 /<span class="st"> </span>vector2             <span class="co"># division of two vectors</span></code></pre></div>
 <pre><code>## [1] 0.1818182 0.3076923 0.4000000 0.4705882 0.5263158</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">max</span>(vector_result)            <span class="co"># vector max</span></code></pre></div>
 <pre><code>## [1] 19</code></pre>
@@ -394,6 +398,52 @@ vector_result</code></pre></div>
 <pre><code>## [1]  2  4  6  8 10</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(vector_result)           <span class="co"># first 5 elements</span></code></pre></div>
 <pre><code>## [1]  2  4  6  8 10 11</code></pre>
+</div>
+</div>
+<div id="project-1." class="section level2">
+<h2><span class="header-section-number">1.6</span> Project 1.</h2>
+<ul>
+<li>Create a vector <em>x</em> with 100 elements, the first 50 are 1, 2, 3, … , 99 and the rest 50 elements are 2, 4, …, 100.</li>
+<li>Create a vector <em>y</em> with 100 elements, the first 50 element are all 100; the rest 50 elements are 1, 2, 3, …, 50.</li>
+<li>Calculate <em>x+y</em> and the element-wise max for <em>x</em> and <em>y</em>; the sum of elements in <em>x</em> and <em>y</em>; the maximum value of <em>x</em>.</li>
+</ul>
+</div>
+<div id="project-2." class="section level2">
+<h2><span class="header-section-number">1.7</span> Project 2.</h2>
+<p>Create a variable</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">6</span>)</code></pre></div>
+<p>Compute the following:</p>
+<ul>
+<li>(x1 + x2, …, x10)/10.</li>
+<li>Find Log10(xi) for each <em>i</em>.</li>
+<li>Find (xi - 1.5)/2.6 for each <em>i</em>.</li>
+<li>Find the difference between the largest and smallest values of <em>x</em>. (This is the range. You can use <em>max</em> and <em>min</em>.)</li>
+</ul>
+</div>
+<div id="project-3." class="section level2">
+<h2><span class="header-section-number">1.8</span> Project 3.</h2>
+<p>Suppose you keep track of one variable <em>x</em> at some soecific poiny in the time. The last 8 values were:</p>
+<p>55311 35624 15908 36219 65499 67251 65745 34447</p>
+<ul>
+<li>Enter this numbers in R
+<ul>
+<li>Use commands diff on the data. What does it give?</li>
+<li>Find the maximum number of the variable, the average number and the minimum number between the sample times.</li>
+</ul></li>
+</ul>
+</div>
+<div id="project-4." class="section level2">
+<h2><span class="header-section-number">1.9</span> Project 4.</h2>
+<p>Suppose one of your bills varies from month to month. Also suppose your year has the following monthly amounts:</p>
+<p>50 23 42 39 47 30 31 21 12 15 55 58</p>
+<ul>
+<li>Enter this data into R using a variable called bill.</li>
+<li>Find the amount you spent this year on your bills.</li>
+<li>What is the smallest amount you spent?</li>
+<li>What is the largest?</li>
+<li>How many bills was the amount greater than $40?</li>
+<li>What percentage of the total bills was this?</li>
+</ul>
 
 <div id="refs" class="references">
 <div>
@@ -404,7 +454,6 @@ vector_result</code></pre></div>
 </div>
 <div>
 <p>Turner, M.G., and R.H. Gardner. 2015. <em>Landscape Ecology in Theory and Practice: Pattern and Process, Second Edition</em>. doi:<a href="https://doi.org/10.1007/978-1-4939-2794-4">10.1007/978-1-4939-2794-4</a>.</p>
-</div>
 </div>
 </div>
 </div>
