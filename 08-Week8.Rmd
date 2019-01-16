@@ -1,0 +1,13 @@
+# Ecosystem Processes in Heterogeneous Landscapes 2 {#week8}
+
+## Requirements
+
+**Chapter 8** - Ecosystem Processes in Heterogeneous Landscapes. [@turner_2015]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: Introduction to Markov Models
+
+**Chapter 8** - Introduction to Markov Models. [@gergel_2001]

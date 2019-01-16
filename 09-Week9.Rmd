@@ -1,0 +1,13 @@
+# Ecosystem Processes in Heterogeneous Landscapes 1 {#week9}
+
+## Requirements
+
+**Chapter 8** - Ecosystem Processes in Heterogeneous Landscapes. [@turner_2015]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: ## Lab: Simulating Management Actions and Their Effects on Forest Landscape Pattern
+
+**Chapter 9** - Simulating Management Actions and Their Effects on Forest Landscape Pattern. [@gergel_2001]

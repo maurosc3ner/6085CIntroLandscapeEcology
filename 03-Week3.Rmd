@@ -1,0 +1,11 @@
+# Introduction to Models {#week3}
+
+## Requirements
+
+**Chapter 3** - Introduction to Models. [@gergel_2001]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: Basic statistical operations in R

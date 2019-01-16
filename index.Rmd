@@ -1,0 +1,70 @@
+--- 
+title: "5085c/6015c Introduction to Lanscape Ecology & GIS"
+date: "Spring 2019"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+---
+
+# Syllabus {-}
+
+## Contact information {-}
+**Professor:** Diego F. Cuadros
+
+**Office:** 401 C Braunstein Hall, Main Campus
+
+**Email:** *diego.cuadros@uc.edu*
+
+## Introduction of the TAs {-}
+
+* Andres Hernandez-Camacho M.Sc. https://github.com/andher1802
+* Esteban Correa-Agudelo M.Sc. https://github.com/maurosc3ner  
+* Format of the Lab sessions:
+    + This is not a class on statistics !!!!
+    + Only a brief introduction about the use of the tool for a better understanding of the landscape ecology applications. 
+    + Notebooks with theory, practices, code samples, etc.
+    + Videos with detailed explanation about the topics.
+    + Lab assignment weekly starting on week 2.
+* Lab sessions tutorials and materials can be found on https://maurosc3ner.github.io/ .
+
+## Content {-}
+
+The goal of this section is to exemplify the role of R in analysis of spatial data in landscape ecology applications. At the beginning, we will review the fundamentals of the use of R within the RStudio interface, basic data structures and operations. Then, we will explore the capabilities of plotting information with R, and finally the use of the library leaflet integrated with RStudio for visualizing spatial data. This brief introduction will help us in understanding the second part of the course, when we will analyze landscape ecology problems and using advance scripts to compute and simulate interesting scenarios of landscape disturbances.
+
+## Schedule {-}
+```{r echo=FALSE, results='asis'}
+schedule <- c( "",
+"**Week 1 - No assignment**",
+"Introduction to R programming language – Getting familiar with R Studio interface, types of data structures, basic operations.",
+"**Week 2 - Lab assignment 2**",
+"Introduction to R programming language - Loops, functions and graphics in R.",
+"**Week 3 – Lab assignment 3**",
+"Introduction to R programming language – Basic statistical operations in R. Proportion test and two sample test, linear regression, and logistic regression.",
+"**Week 4 – Lab assignment 4**",
+"Use of R as GIS part I. Use of leaflet for mapping spatial data, use of base maps, basic geolocation in R, set map properties, drawing point and polygon data.",
+"**Week 5 – Lab assignment 5**",
+"Use of R as GIS part II. Use of leaflet for mapping spatial data, use of base maps, basic geolocation in R, set map properties, drawing point and polygon data.",
+"**Week 6 – Lab assignmentc 6**",
+"Introduction to landscape metrics. Chapter 4 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques",
+"**Week 7 – Lab assignment 7**",
+"Variograms and semivariograms. Chapter 5 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques",
+"**Week 8 – Lab assignment 8**",
+"Characterizing categorical landscape patterns. Chapter 6 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques",
+"**Week 11 – Lab assignment 9**",
+"Introduction to Markov Models. Chapter 8 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques.",
+"**Week 12 – Lab assignment 10**",
+"Disturbances and network applications in landscape ecology. Chapter 11 & 12 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques."
+)
+
+library(knitr)
+kable(schedule, caption = "Lab schedule for the course (changes can take place due to unexpected events)")
+```
+
+
+## References {-}
+1. Landscape ecology in theory and practice: Pattern and process, second edition [@turner_2015]
+2. Learning Landscape Ecology: A Practical Guide to Concepts and Techniques [@gergel_2001]
+3. Geocomputation with R [@lovelace_2019]

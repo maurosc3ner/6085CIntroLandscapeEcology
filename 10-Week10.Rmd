@@ -1,0 +1,13 @@
+# Landscape Dynamics in a Rapidly Changing World {#week10}
+
+## Requirements
+
+**Chapter 8** - Ecosystem Processes in Heterogeneous Landscapes. [@turner_2015]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: Disturbances and network applications in landscape ecology
+
+**Chapter 11 & 12** - Disturbances and network applications in landscape ecology. [@gergel_2001]

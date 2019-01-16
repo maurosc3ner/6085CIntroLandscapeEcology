@@ -1,0 +1,13 @@
+# Landscape Disturbance Dynamics {week5}
+
+## Requirements
+
+**Chapter 6** - Landscape Disturbance Dynamics. [@turner_2015]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: Introduction to landscape metrics
+
+**Chapter 5** - Variograms and semivariograms. [@gergel_2001]

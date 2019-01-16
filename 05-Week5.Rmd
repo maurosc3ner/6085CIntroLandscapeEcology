@@ -1,0 +1,15 @@
+# Introduction to landscape metrics {#week5}
+
+## Requirements
+
+**Chapter 5** - Spatial Statistics. [@turner_2015]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: Introduction to landscape metrics
+
+## Requirements
+
+**Chapter 4** - Introduction to landscape metrics. [@gergel_2001]

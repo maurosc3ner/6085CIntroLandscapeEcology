@@ -1,0 +1,13 @@
+# Landscape Metrics {#week4}
+
+## Requirements
+
+**Chapter 4** - Landscape Metrics. [@gergel_2001]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: Introduction to landscape metrics
+
+**Chapter 4** - Introduction to landscape metrics. [@turner_2015] 

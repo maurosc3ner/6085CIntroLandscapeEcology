@@ -1,0 +1,7 @@
+rmd_files: ["index.Rmd", "01-Week1.Rmd"]
+delete_merged_file: true
+output_dir: docs
+language:
+  ui:
+    chapter_name: "Chapter "
+    

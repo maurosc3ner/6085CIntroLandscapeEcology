@@ -1,0 +1,14 @@
+# Organisms and Landscape Pattern {#week7}
+
+## Requirements
+
+**Chapter 7** - Organisms and Landscape Pattern. [@turner_2015]
+
+## Theory
+
+Some _theory_ goes here.
+
+## Lab: Characterizing categorical landscape patterns
+
+**Chapter 6** - Characterizing categorical landscape patterns. [@gerger_2001]
+
