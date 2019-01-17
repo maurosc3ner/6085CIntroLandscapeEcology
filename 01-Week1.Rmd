@@ -161,3 +161,42 @@ pmax(vector1, vector2)        # element-wise max
 pmin(vector1, vector2)        # element-wise min
 head(vector_result)           # first 5 elements
 ```
+
+## Project 1.
+* Create a vector *x* with 100 elements, the first 50 are 1, 2, 3, ... , 99 and the rest 50 elements are 2, 4, ..., 100.
+* Create a vector *y* with 100 elements, the first 50 element are all 100; the rest 50 elements are 1, 2, 3, ..., 50.
+* Calculate *x+y* and the element-wise max for *x* and *y*; the sum of elements in *x* and *y*; the maximum value of *x*.
+
+## Project 2. 
+Create a variable
+```{r}
+x <- c(2, 9, 3, 7, 4, 9, 6, 6, 6, 6)
+```
+Compute the following: 
+
+* (x1 + x2, ..., x10)/10.
+* Find Log10(xi) for each *i*.
+* Find (xi - 1.5)/2.6 for each *i*.
+* Find the difference between the largest and smallest values of *x*. (This is the range. You can use *max* and *min*.)
+
+## Project 3. 
+Suppose you keep track of one variable *x* at some soecific poiny in the time. The last 8 values were:
+
+55311 35624 15908 36219 65499 67251 65745 34447
+
+* Enter this numbers in R
+    + Use commands diff on the data. What does it give?
+    + Find the maximum number of the variable, the average number and the minimum number between the sample times.  
+
+## Project 4. 
+Suppose one of your bills varies from month to month. Also suppose your year has the following monthly
+amounts:
+
+50 23 42 39 47 30 31 21 12 15 55 58
+
+* Enter this data into R using a variable called bill.
+* Find the amount you spent this year on your bills.
+* What is the smallest amount you spent?
+* What is the largest?
+* How many bills was the amount greater than $40?
+* What percentage of the total bills was this?
