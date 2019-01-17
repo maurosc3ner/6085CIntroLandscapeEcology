@@ -49,9 +49,21 @@ Installation
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ttshzOISCsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Introduction
+Calculation and variables
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ttshzOISCsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/S-o-sdlzhkE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Create and Work With Vectors
+
+<iframe width="560" height="315" src="https://youtu.be/YhQOV27pQfg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Character and Boolean Vectors
+
+<iframe width="560" height="315" src="https://youtu.be/GKu5tw_bIpA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Vector Arithmetic
+
+<iframe width="560" height="315" src="https://youtu.be/u5hroyx0J4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Lab: Code practice
 
