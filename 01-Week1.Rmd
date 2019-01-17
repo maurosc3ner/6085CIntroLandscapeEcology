@@ -63,7 +63,7 @@ Character and Boolean Vectors
 
 Vector Arithmetic
 
-<iframe width="560" height="315" src="https://youtu.be/u5hroyx0J4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u5hroyx0J4o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Lab: Code practice
 
