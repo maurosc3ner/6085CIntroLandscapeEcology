@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 Dataframes, matrices and lists in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS</title>
+  <meta name="description" content="Chapter 2 Dataframes, matrices and lists in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 Dataframes, matrices and lists in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 2 Dataframes, matrices and lists in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Dataframes, matrices and lists in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS" />
+  
+  <meta name="twitter:description" content="Chapter 2 Dataframes, matrices and lists in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="week1.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to Lanscape Ecology & GIS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Syllabus</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i>Contact information</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introduction-of-the-tas"><i class="fa fa-check"></i>Introduction of the TAs</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#content"><i class="fa fa-check"></i>Content</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="week1.html"><a href="week1.html"><i class="fa fa-check"></i><b>1</b> Introduction to Landscape Ecology</a><ul>
+<li class="chapter" data-level="1.1" data-path="week1.html"><a href="week1.html#requirements"><i class="fa fa-check"></i><b>1.1</b> Requirements</a></li>
+<li class="chapter" data-level="1.2" data-path="week1.html"><a href="week1.html#learning-objetives"><i class="fa fa-check"></i><b>1.2</b> Learning objetives</a></li>
+<li class="chapter" data-level="1.3" data-path="week1.html"><a href="week1.html#lab-theory"><i class="fa fa-check"></i><b>1.3</b> Lab Theory</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="week1.html"><a href="week1.html#what-is-r"><i class="fa fa-check"></i><b>1.3.1</b> What is R?</a></li>
+<li class="chapter" data-level="1.3.2" data-path="week1.html"><a href="week1.html#what-is-r-studio"><i class="fa fa-check"></i><b>1.3.2</b> What is R Studio?</a></li>
+<li class="chapter" data-level="1.3.3" data-path="week1.html"><a href="week1.html#installation-of-r-and-r-studio"><i class="fa fa-check"></i><b>1.3.3</b> Installation of R and R Studio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="week1.html"><a href="week1.html#lab-getting-familiar-with-r"><i class="fa fa-check"></i><b>1.4</b> Lab: Getting familiar with R</a></li>
+<li class="chapter" data-level="1.5" data-path="week1.html"><a href="week1.html#lab-code-practice"><i class="fa fa-check"></i><b>1.5</b> Lab: Code practice</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="week1.html"><a href="week1.html#task-1-basic-variables"><i class="fa fa-check"></i><b>1.5.1</b> Task 1: Basic variables:</a></li>
+<li class="chapter" data-level="1.5.2" data-path="week1.html"><a href="week1.html#task-2-operations"><i class="fa fa-check"></i><b>1.5.2</b> Task 2: Operations</a></li>
+<li class="chapter" data-level="1.5.3" data-path="week1.html"><a href="week1.html#task-3.-creating-vectors"><i class="fa fa-check"></i><b>1.5.3</b> Task 3. Creating vectors</a></li>
+<li class="chapter" data-level="1.5.4" data-path="week1.html"><a href="week1.html#task-4.-operations-between-two-or-more-vectors"><i class="fa fa-check"></i><b>1.5.4</b> Task 4. Operations between two or more vectors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="week1.html"><a href="week1.html#project-1."><i class="fa fa-check"></i><b>1.6</b> Project 1.</a></li>
+<li class="chapter" data-level="1.7" data-path="week1.html"><a href="week1.html#project-2."><i class="fa fa-check"></i><b>1.7</b> Project 2.</a></li>
+<li class="chapter" data-level="1.8" data-path="week1.html"><a href="week1.html#project-3."><i class="fa fa-check"></i><b>1.8</b> Project 3.</a></li>
+<li class="chapter" data-level="1.9" data-path="week1.html"><a href="week1.html#project-4."><i class="fa fa-check"></i><b>1.9</b> Project 4.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="week2.html"><a href="week2.html"><i class="fa fa-check"></i><b>2</b> Dataframes, matrices and lists in R</a><ul>
+<li class="chapter" data-level="2.1" data-path="week2.html"><a href="week2.html#here-is-a-review-of-existing-methods."><i class="fa fa-check"></i><b>2.1</b> Here is a review of existing methods.</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="week2.html"><a href="week2.html#recap"><i class="fa fa-check"></i><b>2.1.1</b> Recap</a></li>
+<li class="chapter" data-level="2.1.2" data-path="week2.html"><a href="week2.html#introduction-to-dataframes"><i class="fa fa-check"></i><b>2.1.2</b> Introduction to Dataframes</a></li>
+<li class="chapter" data-level="2.1.3" data-path="week2.html"><a href="week2.html#lists"><i class="fa fa-check"></i><b>2.1.3</b> Lists</a></li>
+<li class="chapter" data-level="2.1.4" data-path="week2.html"><a href="week2.html#matrices"><i class="fa fa-check"></i><b>2.1.4</b> Matrices</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="mailto:correaem@mail.uc.edu" target="blank">contact</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">5085c/6015c Introduction to Lanscape Ecology &amp; GIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week2" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Dataframes, matrices and lists in R</h1>
+<div id="here-is-a-review-of-existing-methods." class="section level2">
+<h2><span class="header-section-number">2.1</span> Here is a review of existing methods.</h2>
+<p>title: “Landscape ecology course: Lab session No. 2” authors: “Andres Hernandez M.Sc. - Esteban Correa M.Sc.” date: “January 23, 2019” output: html_document: toc: true toc_float: collapsed: false smooth_scroll: false —</p>
+<div id="recap" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Recap</h3>
+<ul>
+<li>Vector operations and generation</li>
+<li>Logical operations:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="st">&quot;&gt;&quot;</span> <span class="co"># for &quot;greater than&quot;</span>
+  <span class="st">&quot;&gt;=&quot;</span> <span class="co"># for &quot;greater than or equal to&quot;</span>
+  <span class="st">&quot;&lt;&quot;</span> <span class="co"># for &quot;less than&quot;</span>
+  <span class="st">&quot;&lt;=&quot;</span> <span class="co"># for &quot;less than or equal to&quot;</span>
+  <span class="st">&quot;==&quot;</span> <span class="co"># for &quot;equal to&quot;</span>
+  <span class="st">&quot;!=&quot;</span> <span class="co"># for &quot;not equal to&quot;</span>
+  <span class="st">&quot;&amp;&quot;</span> <span class="co">#for &quot;and&quot;</span>
+  <span class="st">&quot;|&quot;</span> <span class="co"># for &quot;or&quot;</span></code></pre></div>
+<ul>
+<li>Create vectors:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  new_vector &lt;-<span class="st"> </span><span class="dv">1</span>:<span class="dv">10</span> <span class="co"># Create a vector from 1 to 10</span>
+  new_vector</code></pre></div>
+<p>[1] 1 2 3 4 5 6 7 8 9 10</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  new_vector &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">5</span>, <span class="dv">10</span>) <span class="co"># Create a vector of 10 5&#39;s (ten times five)</span>
+  new_vector</code></pre></div>
+<p>[1] 5 5 5 5 5 5 5 5 5 5</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  new_vector &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>) <span class="co"># Create a vector from 1 to less equals to 10 but with step of 2</span></code></pre></div>
+</div>
+<div id="introduction-to-dataframes" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Introduction to Dataframes</h3>
+<ul>
+<li>Usually the data is stored in a tabular form, with rows for different person and columns for different variables.</li>
+<li>Suppose that we have the following table:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">plot_id &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">18</span>)
+species_id &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DO&quot;</span>,<span class="st">&quot;PF&quot;</span>,<span class="st">&quot;OX&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;PF&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;PF&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;PF&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>,<span class="st">&quot;DM&quot;</span>)
+sex &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;M&#39;</span>,<span class="st">&#39;M&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;M&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;M&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;M&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;M&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>,<span class="st">&#39;F&#39;</span>)
+hindfoot_length &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">35</span>,<span class="dv">37</span>,<span class="dv">34</span>,<span class="dv">35</span>,<span class="dv">35</span>,<span class="dv">32</span>,<span class="dv">15</span>,<span class="dv">21</span>,<span class="dv">36</span>,<span class="dv">12</span>,<span class="dv">32</span>,<span class="dv">16</span>,<span class="dv">34</span>,<span class="dv">14</span>,<span class="dv">35</span>,<span class="dv">37</span>,<span class="dv">35</span>,<span class="dv">35</span>,<span class="dv">33</span>)
+weight &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">48</span>,<span class="dv">29</span>,<span class="dv">46</span>,<span class="dv">36</span>,<span class="dv">52</span>,<span class="dv">8</span>,<span class="dv">22</span>,<span class="dv">35</span>,<span class="dv">7</span>,<span class="dv">22</span>,<span class="dv">9</span>,<span class="dv">42</span>,<span class="dv">8</span>,<span class="dv">41</span>,<span class="dv">37</span>,<span class="dv">43</span>,<span class="dv">41</span>,<span class="dv">40</span>)
+study &lt;-<span class="st"> </span><span class="kw">data.frame</span>(plot_id,species_id,sex,hindfoot_length,weight)</code></pre></div>
+<ul>
+<li><p>We can add row names to the data frame</p></li>
+<li><p>or change column names</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(study)&lt;-<span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>, <span class="st">&quot;NAME&quot;</span>, <span class="st">&quot;SEX&quot;</span>, <span class="st">&quot;HINDFOOT_LENGHT&quot;</span>, <span class="st">&quot;WEIGHT&quot;</span>) <span class="co"># Assign names to the dataframe column</span></code></pre></div>
+<ul>
+<li>Now we can summarize a column,</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(study[,<span class="dv">4</span>]) <span class="co"># Compute the mean from a numeric vector</span></code></pre></div>
+<p>[1] 29.63158</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(study[,<span class="dv">4</span>]) <span class="co"># Compute the standard error from a vector</span></code></pre></div>
+<p>[1] 8.858207</p>
+<ul>
+<li>Notice that we select a column by the following command:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(study)[,<span class="dv">4</span>]</code></pre></div>
+<p>[1] 35 37 34 35 35 32 15 21 36 12 32 16 34 14 35 37 35 35 33</p>
+<ul>
+<li>Question: how to select a row?</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">study[<span class="dv">4</span>,]</code></pre></div>
+<p>ID NAME SEX HINDFOOT_LENGHT WEIGHT 4 4 DM F 35 46</p>
+<ul>
+<li>We can also select a column or a row by its name</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">study[,<span class="st">&quot;NAME&quot;</span>] <span class="co"># Call column by name</span></code></pre></div>
+<p>[1] DM DM DM DM DM DO PF OX DM PF DM PF DM PF DM DM DM DM DM Levels: DM DO OX PF</p>
+<p>To select a entry, we can do</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">study[<span class="dv">1</span>,<span class="dv">2</span>]</code></pre></div>
+<p>[1] DM Levels: DM DO OX PF</p>
+<p>this is because that a table is two dimensional.</p>
+<ul>
+<li><p>Question: how to select the first and second column and make it a new data frame?</p></li>
+<li><p>Question: how to select the records (rows) for all females and make it a new data frame?</p></li>
+</ul>
+</div>
+<div id="lists" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Lists</h3>
+<ul>
+<li><p>Lists are the R objects which contain elements of different types like (numbers, strings, vectors) and another list inside it. A list can also contain a matrix or a function as its elements. List is created using list() function.</p></li>
+<li><p>Let us create a list:</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">list.example &lt;-<span class="st"> </span><span class="kw">list</span>( <span class="dt">a =</span> <span class="dv">1</span>:<span class="dv">5</span>, <span class="dt">b =</span> <span class="kw">c</span>(<span class="st">&quot;Cincinnati&quot;</span>, <span class="st">&quot;Columbus&quot;</span>, <span class="st">&quot;Cleveland&quot;</span>), <span class="dt">c =</span> study)</code></pre></div>
+<ul>
+<li>What is in the list?</li>
+<li>To access a list element, we can use the “$” operator:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">list.example$<span class="st">&quot;a&quot;</span></code></pre></div>
+<p>[1] 1 2 3 4 5</p>
+<p>Or the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">list.example[[<span class="st">&quot;a&quot;</span>]]</code></pre></div>
+<p>[1] 1 2 3 4 5</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">list.example[[<span class="dv">1</span>]]</code></pre></div>
+<p>[1] 1 2 3 4 5</p>
+<ul>
+<li>What if you use single square brackets “[” instead of “[[”?</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">list.example[<span class="dv">2</span>] <span class="co"># Access the second element of the list but not the elements within</span></code></pre></div>
+<p>$b [1] “Cincinnati” “Columbus” “Cleveland”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(list.example[<span class="dv">2</span>]) <span class="co"># Type of element with single brackets (a list with the elements of the first position)</span></code></pre></div>
+<p>[1] “list”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(list.example[[<span class="dv">2</span>]]) <span class="co"># Type of element with double brackets</span></code></pre></div>
+<p>[1] “character”</p>
+<ul>
+<li>A data frame is a list, where all elements are the column vectors. So we can access a column of a data frame using “$” operator:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  study$<span class="st">&quot;SEX&quot;</span></code></pre></div>
+<p>[1] M M F F M F M F F M F M F F F F F F F Levels: F M</p>
+<ul>
+<li>Try the following commands:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">length</span>(list.example) <span class="co"># get the length of the list </span></code></pre></div>
+<p>[1] 3</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">length</span>(list.example[<span class="dv">1</span>]) <span class="co"># get the length of the list returned with the elements of the first position (some ackward notation of r) </span></code></pre></div>
+<p>[1] 1</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">length</span>(list.example[[<span class="dv">1</span>]]) <span class="co"># get the length of the element in the first position of the list </span></code></pre></div>
+<p>[1] 5</p>
+</div>
+<div id="matrices" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Matrices</h3>
+<p>A matrix is an extension of vector. It has additional dimension attributes (row and columns).</p>
+<ul>
+<li>Let us create a matrix:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>) <span class="co"># Create a matrix with 9 elements and 3 rows (columns are automatically adjusted).</span>
+matrix.example</code></pre></div>
+<pre><code> [,1] [,2] [,3]</code></pre>
+<p>[1,] 1 4 7 [2,] 2 5 8 [3,] 3 6 9</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span>:<span class="dv">8</span>, <span class="dt">nrow =</span> <span class="dv">2</span>) <span class="co"># Create a matrix with 8 elements (1 to 8) and 2 rows.</span>
+matrix.example<span class="fl">.2</span></code></pre></div>
+<pre><code> [,1] [,2] [,3] [,4]</code></pre>
+<p>[1,] 1 3 5 7 [2,] 2 4 6 8</p>
+<ul>
+<li>We can change a matrix to a vector (ignore the dimension information for each entry):</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.vector</span>(matrix.example<span class="fl">.2</span>) <span class="co"># get a vector (Dimension 1) with the elements of matrix.example.2</span></code></pre></div>
+<p>[1] 1 2 3 4 5 6 7 8</p>
+<ul>
+<li>How to know the dimmension of a matrix:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(matrix.example<span class="fl">.2</span>) <span class="co"># Dimension of matrix.example.2</span></code></pre></div>
+<p>[1] 2 4</p>
+<ul>
+<li>What if we want to create a matrix with the elements sorted by row</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example.byrow &lt;-<span class="st"> </span><span class="kw">matrix</span>( <span class="dv">1</span>:<span class="dv">9</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>) <span class="co"># Create a matrix with elements by row. </span>
+matrix.example.byrow</code></pre></div>
+<pre><code> [,1] [,2] [,3]</code></pre>
+<p>[1,] 1 2 3 [2,] 4 5 6 [3,] 7 8 9 * matrices also support operations</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example +<span class="st"> </span>matrix.example.byrow <span class="co"># Adding two matrices</span></code></pre></div>
+<pre><code> [,1] [,2] [,3]</code></pre>
+<p>[1,] 2 6 10 [2,] 6 10 14 [3,] 10 14 18</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example -<span class="st"> </span>matrix.example.byrow <span class="co"># Substracting two matrices</span></code></pre></div>
+<pre><code> [,1] [,2] [,3]</code></pre>
+<p>[1,] 0 2 4 [2,] -2 0 2 [3,] -4 -2 0</p>
+<ul>
+<li>The same logic to access the elements</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example[<span class="dv">1</span>,] <span class="co"># Accessing row 1</span></code></pre></div>
+<p>[1] 1 4 7</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example[,<span class="dv">2</span>] <span class="co"># Accessing row 2</span></code></pre></div>
+<p>[1] 4 5 6</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">matrix.example[<span class="dv">1</span>,<span class="dv">2</span>] <span class="co"># Accessing row 1,2</span></code></pre></div>
+<p>[1] 4</p>
+
+<div id="refs" class="references">
+<div>
+<p>Gergel, Sarah, and Monica Turner. 2001. <em>Learning Landscape Ecology: A Practical Guide to Concepts and Techniques</em>. <em>Ecology</em>. Vol. 83. doi:<a href="https://doi.org/10.1007/978-1-4939-6374-4">10.1007/978-1-4939-6374-4</a>.</p>
+</div>
+<div>
+<p>Robin Lovelace, Jakub Nowosad, Robin, and Jannes Muenchow. 2019. <em>Geocomputation with R</em>. Vol. 1. <a href="https://bookdown.org/robinlovelace/geocompr/" class="uri">https://bookdown.org/robinlovelace/geocompr/</a>.</p>
+</div>
+<div>
+<p>Turner, M.G., and R.H. Gardner. 2015. <em>Landscape Ecology in Theory and Practice: Pattern and Process, Second Edition</em>. doi:<a href="https://doi.org/10.1007/978-1-4939-2794-4">10.1007/978-1-4939-2794-4</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>
