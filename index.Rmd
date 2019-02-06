@@ -1,12 +1,15 @@
 --- 
 title: "5085c/6015c Introduction to Lanscape Ecology & GIS"
+bibliography: book.bib
 date: "Spring 2019"
-site: bookdown::bookdown_site
+output:
+  html_document:
+    df_print: paged
 documentclass: book
-bibliography: [book.bib]
-biblio-style: apalike
 link-citations: yes
-description: "5085c/6015c Introduction to Lanscape Ecology & GIS R Markdown"
+description: 5085c/6015c Introduction to Lanscape Ecology & GIS R Markdown
+site: bookdown::bookdown_site
+biblio-style: apalike
 ---
 
 # Syllabus {-}

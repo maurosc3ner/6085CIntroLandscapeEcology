@@ -1,17 +1,6 @@
 # Dataframes, matrices and lists in R {#week2}
 
 Here is a review of existing methods.
----
-title: "Landscape ecology course: Lab session No. 2"
-authors: "Andres Hernandez M.Sc. - Esteban Correa M.Sc."
-date: "January 23, 2019"
-output:
-  html_document:
-    toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
----
 
 ### Recap
 * Vector operations and generation

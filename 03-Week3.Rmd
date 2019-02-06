@@ -1,11 +1,162 @@
-# Introduction to Models {#week3}
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Functions and loops {#week3}
 
-## Requirements
 
-**Chapter 3** - Introduction to Models. [@gergel_2001]
 
-## Theory
+<!-- # Functions and loops {#week3} -->
 
-Some _theory_ goes here.
+## Why do we need functions?
 
-## Lab: Basic statistical operations in R
+Consider that you need to apply an operation over the elements of a vector. For example, remove all the elements that are maximum over a set of values:
+
+One way to do this:
+
+```{r}
+x <- c(1, 3, 9, 8, 9, 3, 4, 5, 5, 2, 9, 4, 5, 9)
+x.max <- max(x)
+y <- x[x != x.max]
+y
+```
+
+If you want to do the same operation on many other vectors, you have to repeat the same 3 lines for each vector.
+This is not optimal because:
+- Code is more complex (more lines of the code).
+- More probability of errors.
+
+A function is a piece of code that you can apply over many objects, using a predefined structure. We have been using functions already, however these functions are built-in in R.
+
+sort(), which.max(), mean()
+
+All of them are functions in r.
+
+We can also create our own functions:
+- A function has always three main elements:
+  - name
+  - parameters (input, and output)
+  - body
+
+For our previous example:
+
+```{r}
+function.name <- function (input.parameter) {
+  max.value <- max(input.parameter)
+  output <- input.parameter[input.parameter != max.value]
+  return(output)
+}
+```
+
+In this example:
+- function.name corresponds to the name of the function.
+- input.parameter corresponds to the input parameter. (could be one or more, separated by comma).
+- return(output) is the command for returning the output.
+
+A more meaningful, and standard definition for our function for the previous example should be:
+
+```{r}
+remove.max <- function (input.vector) {
+  max.value <- max(input.vector)
+  output.vector <- input.vector[input.vector != max.value]
+  return(output.vector)
+}
+```
+
+Lets test our function with several inputs.
+
+```{r}
+input.vector.1 <- c(1,3,9,8,9,3,4,5,5,2,9,4,5,9)
+remove.max(input.vector.1)
+
+input.vector.2 <- c(11,2,11,5,8,5,6,3,5,9,10,8)
+remove.max(input.vector.2)
+
+input.vector.3 <- c(1,2,15,6,8,15,1)
+remove.max(input.vector.3)
+```
+
+Now we want to create a function to remove ONLY!!! the first maximum element of a vector
+
+```{r}
+input.vector.1 <- c(1,3,9,8,9,3,4,5,5,2,9,4,5,9)
+remove.first.max <- function (input.vector) {
+  first.max.input <- which.max(input.vector)
+  output.vector <- input.vector[-first.max.input]
+  return(output.vector)
+}
+remove.first.max(input.vector.1)
+```
+
+Now suppose that we want to have only one function that allows to choose between removing the first maximum element and all the maximum elements.
+
+This is allowed by the use of several input parameters, and other complementary bult-in functions:
+
+- If/else statements
+
+```{r}
+input.vector.1 <- c(1,3,9,8,9,3,4,5,5,2,9,4,5,9)
+remove.max.choose <- function (input.vector, first) {
+  if(first) {
+    max.value <- max(input.vector)
+    output.vector <- input.vector[input.vector != max.value]
+    } else {
+    first.max.input <- which.max(input.vector)
+    output.vector <- input.vector[-first.max.input]
+  }
+  return(output.vector)
+}
+
+remove.max.choose(input.vector.1, TRUE)
+remove.max.choose(input.vector.1, FALSE)
+```
+
+## FOR LOOP
+A for loop is a command that allows to iterate over the elements of a vector or iterable element.
+
+```{r}
+vector.input.1 <- c(1, 2, 3, 4, 5, 6)
+
+for (each.element in vector.input.1) {
+  print(each.element)
+}
+
+```
+
+## Practice functions
+
+### Practice 1: create functions
+
+- Create a function miles.to.km to convert the distances in miles to distances in kilometers (1 mile ??? 1.609 kilometers).
+
+- Create a function so that it can accept two vectors, and remove all minimum values from the first vector and remove all maximum values in the second vector. Notice that you can ask R to return a list (contains two output vectors) from this function.
+
+### Practice 2: add up all even elements in a vector
+
+- Now suppose that we wish to add up all even elements in a vector.
+
+- An intuitive way is to go through each element of the vector, and add the element to a storage variable (initial value is 0) only when the element is even.
+
+- Now the question is: how to go through all elements of a vector, one at a time?
+
+### Project 3: get Fibonacci numbers up to 200
+
+- The Fibonacci numbers are:
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ???
+
+- The above sequence satisfies two rules:
+??? Starting from the third element, each element is
+
+the sum of the two previous elements. ??? The sequence starts with 1, 1.
+- How to ask R to create a vector that contains the Fibonacci numbers up to 200 (i.e., <200)?
+
+### Videos
+
+### Functions:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1wB1rHAYzQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Loops:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/djI-yfk-DZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
