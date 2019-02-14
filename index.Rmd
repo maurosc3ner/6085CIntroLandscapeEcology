@@ -5,6 +5,7 @@ date: "Spring 2019"
 output:
   html_document:
     df_print: paged
+  pdf_document: default
 documentclass: book
 link-citations: yes
 description: 5085c/6015c Introduction to Lanscape Ecology & GIS R Markdown

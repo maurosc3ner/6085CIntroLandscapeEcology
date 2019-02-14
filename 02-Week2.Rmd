@@ -2,7 +2,8 @@
 
 Here is a review of existing methods.
 
-### Recap
+## Recap
+
 * Vector operations and generation
 * Logical operations:
 
@@ -26,7 +27,8 @@ Here is a review of existing methods.
   new_vector <- seq(1, 10, 2) # Create a vector from 1 to less equals to 10 but with step of 2
 ```
 
-### Introduction to Dataframes
+## Introduction to Dataframes
+
 * Usually the data is stored in a tabular form, with rows for different person and columns for different variables.
 * Suppose that we have the following table:
 
@@ -81,7 +83,8 @@ this is because that a table is two dimensional.
 
 * Question: how to select the records (rows) for all females and make it a new data frame?
 
-### Lists
+## Lists
+
 * Lists are the R objects which contain elements of different types like (numbers, strings, vectors) and another list inside it. A list can also contain a matrix or a function as its elements. List is created using list() function.
 
 * Let us create a list: 
@@ -122,7 +125,8 @@ So we can access a column of a data frame using "$" operator:
   length(list.example[[1]]) # get the length of the element in the first position of the list 
 ```
 
-### Matrices
+## Matrices
+
 A matrix is an extension of vector. It has additional dimension attributes (row and columns).
 
 * Let us create a matrix:
