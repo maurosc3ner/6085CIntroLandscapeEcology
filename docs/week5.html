@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 5 Data Visualization in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS</title>
+  <meta name="description" content="Chapter 5 Data Visualization in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 5 Data Visualization in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Chapter 5 Data Visualization in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Data Visualization in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS" />
+  
+  <meta name="twitter:description" content="Chapter 5 Data Visualization in R | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="week4.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to Lanscape Ecology & GIS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Syllabus</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contact-information"><i class="fa fa-check"></i>Contact information</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introduction-of-the-tas"><i class="fa fa-check"></i>Introduction of the TAs</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#content"><i class="fa fa-check"></i>Content</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="week1.html"><a href="week1.html"><i class="fa fa-check"></i><b>1</b> Introduction to Landscape Ecology</a><ul>
+<li class="chapter" data-level="1.1" data-path="week1.html"><a href="week1.html#requirements"><i class="fa fa-check"></i><b>1.1</b> Requirements</a></li>
+<li class="chapter" data-level="1.2" data-path="week1.html"><a href="week1.html#learning-objetives"><i class="fa fa-check"></i><b>1.2</b> Learning objetives</a></li>
+<li class="chapter" data-level="1.3" data-path="week1.html"><a href="week1.html#lab-theory"><i class="fa fa-check"></i><b>1.3</b> Lab Theory</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="week1.html"><a href="week1.html#what-is-r"><i class="fa fa-check"></i><b>1.3.1</b> What is R?</a></li>
+<li class="chapter" data-level="1.3.2" data-path="week1.html"><a href="week1.html#what-is-r-studio"><i class="fa fa-check"></i><b>1.3.2</b> What is R Studio?</a></li>
+<li class="chapter" data-level="1.3.3" data-path="week1.html"><a href="week1.html#installation-of-r-and-r-studio"><i class="fa fa-check"></i><b>1.3.3</b> Installation of R and R Studio</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="week1.html"><a href="week1.html#lab-getting-familiar-with-r"><i class="fa fa-check"></i><b>1.4</b> Lab: Getting familiar with R</a></li>
+<li class="chapter" data-level="1.5" data-path="week1.html"><a href="week1.html#lab-code-practice"><i class="fa fa-check"></i><b>1.5</b> Lab: Code practice</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="week1.html"><a href="week1.html#task-1-basic-variables"><i class="fa fa-check"></i><b>1.5.1</b> Task 1: Basic variables:</a></li>
+<li class="chapter" data-level="1.5.2" data-path="week1.html"><a href="week1.html#task-2-operations"><i class="fa fa-check"></i><b>1.5.2</b> Task 2: Operations</a></li>
+<li class="chapter" data-level="1.5.3" data-path="week1.html"><a href="week1.html#task-3.-creating-vectors"><i class="fa fa-check"></i><b>1.5.3</b> Task 3. Creating vectors</a></li>
+<li class="chapter" data-level="1.5.4" data-path="week1.html"><a href="week1.html#task-4.-operations-between-two-or-more-vectors"><i class="fa fa-check"></i><b>1.5.4</b> Task 4. Operations between two or more vectors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="week1.html"><a href="week1.html#project-1."><i class="fa fa-check"></i><b>1.6</b> Project 1.</a></li>
+<li class="chapter" data-level="1.7" data-path="week1.html"><a href="week1.html#project-2."><i class="fa fa-check"></i><b>1.7</b> Project 2.</a></li>
+<li class="chapter" data-level="1.8" data-path="week1.html"><a href="week1.html#project-3."><i class="fa fa-check"></i><b>1.8</b> Project 3.</a></li>
+<li class="chapter" data-level="1.9" data-path="week1.html"><a href="week1.html#project-4."><i class="fa fa-check"></i><b>1.9</b> Project 4.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="week2.html"><a href="week2.html"><i class="fa fa-check"></i><b>2</b> Dataframes, matrices and lists in R</a><ul>
+<li class="chapter" data-level="2.1" data-path="week2.html"><a href="week2.html#recap"><i class="fa fa-check"></i><b>2.1</b> Recap</a></li>
+<li class="chapter" data-level="2.2" data-path="week2.html"><a href="week2.html#introduction-to-dataframes"><i class="fa fa-check"></i><b>2.2</b> Introduction to Dataframes</a></li>
+<li class="chapter" data-level="2.3" data-path="week2.html"><a href="week2.html#lists"><i class="fa fa-check"></i><b>2.3</b> Lists</a></li>
+<li class="chapter" data-level="2.4" data-path="week2.html"><a href="week2.html#matrices"><i class="fa fa-check"></i><b>2.4</b> Matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="week3.html"><a href="week3.html"><i class="fa fa-check"></i><b>3</b> Functions and loops</a><ul>
+<li class="chapter" data-level="3.1" data-path="week3.html"><a href="week3.html#why-do-we-need-functions"><i class="fa fa-check"></i><b>3.1</b> Why do we need functions?</a></li>
+<li class="chapter" data-level="3.2" data-path="week3.html"><a href="week3.html#for-loop"><i class="fa fa-check"></i><b>3.2</b> FOR LOOP</a></li>
+<li class="chapter" data-level="3.3" data-path="week3.html"><a href="week3.html#practice-functions"><i class="fa fa-check"></i><b>3.3</b> Practice functions</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="week3.html"><a href="week3.html#practice-1-create-functions"><i class="fa fa-check"></i><b>3.3.1</b> Practice 1: create functions</a></li>
+<li class="chapter" data-level="3.3.2" data-path="week3.html"><a href="week3.html#practice-2-add-up-all-even-elements-in-a-vector"><i class="fa fa-check"></i><b>3.3.2</b> Practice 2: add up all even elements in a vector</a></li>
+<li class="chapter" data-level="3.3.3" data-path="week3.html"><a href="week3.html#project-3-get-fibonacci-numbers-up-to-200"><i class="fa fa-check"></i><b>3.3.3</b> Project 3: get Fibonacci numbers up to 200</a></li>
+<li class="chapter" data-level="3.3.4" data-path="week3.html"><a href="week3.html#videos"><i class="fa fa-check"></i><b>3.3.4</b> Videos</a></li>
+<li class="chapter" data-level="3.3.5" data-path="week3.html"><a href="week3.html#functions"><i class="fa fa-check"></i><b>3.3.5</b> Functions:</a></li>
+<li class="chapter" data-level="3.3.6" data-path="week3.html"><a href="week3.html#loops"><i class="fa fa-check"></i><b>3.3.6</b> Loops:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="week4.html"><a href="week4.html"><i class="fa fa-check"></i><b>4</b> Linear Regression</a><ul>
+<li class="chapter" data-level="4.1" data-path="week4.html"><a href="week4.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.1</b> Simple Linear Regression</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="week4.html"><a href="week4.html#example-1."><i class="fa fa-check"></i><b>4.1.1</b> Example 1.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="week4.html"><a href="week4.html#multiple-linear-regression"><i class="fa fa-check"></i><b>4.2</b> Multiple Linear Regression</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="week4.html"><a href="week4.html#example-1.-1"><i class="fa fa-check"></i><b>4.2.1</b> Example 1.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="week4.html"><a href="week4.html#linear-models-with-categorical-and-binomial-outputs"><i class="fa fa-check"></i><b>4.3</b> Linear models with categorical and binomial outputs</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="week5.html"><a href="week5.html"><i class="fa fa-check"></i><b>5</b> Data Visualization in R</a><ul>
+<li class="chapter" data-level="5.1" data-path="week5.html"><a href="week5.html#basics"><i class="fa fa-check"></i><b>5.1</b> Basics</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="week5.html"><a href="week5.html#pie-charts"><i class="fa fa-check"></i><b>5.1.1</b> Pie-charts</a></li>
+<li class="chapter" data-level="5.1.2" data-path="week5.html"><a href="week5.html#lines-and-scatterplots"><i class="fa fa-check"></i><b>5.1.2</b> Lines and Scatterplots</a></li>
+<li class="chapter" data-level="5.1.3" data-path="week5.html"><a href="week5.html#scatterplots"><i class="fa fa-check"></i><b>5.1.3</b> Scatterplots</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="week5.html"><a href="week5.html#histograms"><i class="fa fa-check"></i><b>5.2</b> Histograms</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="week5.html"><a href="week5.html#boxplots"><i class="fa fa-check"></i><b>5.2.1</b> Boxplots</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="week5.html"><a href="week5.html#other-tips"><i class="fa fa-check"></i><b>5.3</b> Other tips</a></li>
+<li class="chapter" data-level="5.4" data-path="week5.html"><a href="week5.html#project-1"><i class="fa fa-check"></i><b>5.4</b> Project 1</a></li>
+<li class="chapter" data-level="5.5" data-path="week5.html"><a href="week5.html#project-2"><i class="fa fa-check"></i><b>5.5</b> Project 2</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="mailto:correaem@mail.uc.edu" target="blank">contact</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">5085c/6015c Introduction to Lanscape Ecology &amp; GIS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="week5" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Data Visualization in R</h1>
+<div id="basics" class="section level2">
+<h2><span class="header-section-number">5.1</span> Basics</h2>
+<div id="pie-charts" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Pie-charts</h3>
+<p>Let’s start with a simple pie chart of the meningitis cases for a hospital:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Define the meningitis vector with 5 values </span>
+meningitis &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">11</span>)
+<span class="co"># Graph the meningitis vector with all defaults </span>
+<span class="kw">pie</span>(meningitis)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Now, We are going to improve this pie chart by adding labels, proportions and a legend:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Define some colors ideal for black &amp; white print </span>
+colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;white&quot;</span>,<span class="st">&quot;grey70&quot;</span>,<span class="st">&quot;grey90&quot;</span>,<span class="st">&quot;grey50&quot;</span>,<span class="st">&quot;black&quot;</span>)
+
+<span class="co"># Calculate the percentage for each day, rounded to one # decimal place </span>
+meningits_labels &lt;-<span class="st"> </span><span class="kw">round</span>(meningitis<span class="op">/</span><span class="kw">sum</span>(meningitis) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dv">1</span>)
+
+<span class="co"># Concatenate the character &#39;%&#39; after each value </span>
+meningits_labels &lt;-<span class="st"> </span><span class="kw">paste</span>(meningits_labels, <span class="st">&quot;%&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)
+
+<span class="co"># Create a pie chart with defined heading and custom colors # and labels</span>
+<span class="kw">pie</span>(
+  meningitis,
+  <span class="dt">main =</span> <span class="st">&quot;Cases of Meningitis&quot;</span>,
+  <span class="dt">col =</span> colors,
+  <span class="dt">labels =</span> meningits_labels,
+  <span class="dt">cex =</span> <span class="fl">0.8</span>
+)
+
+<span class="co"># Create a legend at the right</span>
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>,
+       <span class="kw">c</span>(<span class="st">&quot;Mon&quot;</span>, <span class="st">&quot;Tue&quot;</span>, <span class="st">&quot;Wed&quot;</span>, <span class="st">&quot;Thu&quot;</span>, <span class="st">&quot;Fri&quot;</span>),
+       <span class="dt">cex =</span> <span class="fl">0.8</span>,
+       <span class="dt">fill =</span> colors)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="lines-and-scatterplots" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Lines and Scatterplots</h3>
+<p>Line charts are the simplest way to explore your data, suppose we have flu cases reported for an entire week:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">flucases &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">11</span>,<span class="dv">10</span>,<span class="dv">4</span>)
+<span class="kw">plot</span>(flucases)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>We are going to customize our plot by adding a proper title and axes:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(
+  flucases,
+  <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>,
+  <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>,
+  <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,
+  <span class="dt">xlab =</span> <span class="st">&quot;Day of the week&quot;</span>,
+  <span class="dt">ylab =</span> <span class="st">&quot;Cases&quot;</span>
+)
+<span class="kw">axis</span>(<span class="dv">1</span>,
+     <span class="dt">at =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>,
+     <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Mon&quot;</span>, <span class="st">&quot;Tue&quot;</span>, <span class="st">&quot;Wed&quot;</span>, <span class="st">&quot;Thu&quot;</span>, <span class="st">&quot;Fri&quot;</span>, <span class="st">&quot;Sat&quot;</span>, <span class="st">&quot;Sun&quot;</span>))
+<span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Flu cases at Clifton&quot;</span>,
+      <span class="dt">col.main =</span> <span class="st">&quot;red&quot;</span>,
+      <span class="dt">font.main =</span> <span class="dv">4</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Now suppose you have the data for daily temperature at Clifton, and want to make a visual comparison:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temperature &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">12</span>)
+
+<span class="kw">plot</span>(
+  flucases,
+  <span class="dt">xaxt =</span> <span class="st">&quot;n&quot;</span>,
+  <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>,
+  <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>,
+  <span class="dt">xlab =</span> <span class="st">&quot;Day of the week&quot;</span>,
+  <span class="dt">ylab =</span> <span class="st">&quot;Cases&quot;</span>,
+  <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(temperature))
+)
+<span class="kw">axis</span>(<span class="dv">1</span>,
+     <span class="dt">at =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>,
+     <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Mon&quot;</span>, <span class="st">&quot;Tue&quot;</span>, <span class="st">&quot;Wed&quot;</span>, <span class="st">&quot;Thu&quot;</span>, <span class="st">&quot;Fri&quot;</span>, <span class="st">&quot;Sat&quot;</span>, <span class="st">&quot;Sun&quot;</span>))
+<span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Flu cases at Clifton&quot;</span>,
+      <span class="dt">col.main =</span> <span class="st">&quot;red&quot;</span>,
+      <span class="dt">font.main =</span> <span class="dv">4</span>)
+
+<span class="co"># Graph daily temperature with red dashed line and square points</span>
+<span class="kw">lines</span>(
+  temperature,
+  <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>,
+  <span class="dt">pch =</span> <span class="dv">22</span>,
+  <span class="dt">lty =</span> <span class="dv">2</span>,
+  <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>
+)
+<span class="co"># Adding the legend</span>
+<span class="kw">legend</span>(
+  <span class="st">&quot;topright&quot;</span>,
+  <span class="kw">c</span>(<span class="st">&quot;Flu cases&quot;</span>, <span class="st">&quot;Daily temperature in Celcius degrees&quot;</span>),
+  <span class="dt">cex =</span> <span class="fl">0.8</span>,
+  <span class="dt">col =</span> <span class="kw">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>),
+  <span class="dt">pch =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">22</span>,
+  <span class="dt">lty =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>
+)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="scatterplots" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Scatterplots</h3>
+<p>The simplest way to create scatterplots is to use plot(x, y), where x and y are numeric vectors denoting the (x,y) points to plot:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(mtcars)
+<span class="kw">plot</span>(
+  mtcars<span class="op">$</span>wt,
+  mtcars<span class="op">$</span>mpg,
+  <span class="dt">main =</span> <span class="st">&quot;Comparing cars&#39; fuel usage&quot;</span>,
+  <span class="dt">xlab =</span> <span class="st">&quot;Car Weight &quot;</span>,
+  <span class="dt">ylab =</span> <span class="st">&quot;Miles Per Gallon &quot;</span>,
+  <span class="dt">pch =</span> <span class="dv">19</span>
+)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>But also, more complex comparisons can be performed in R using scatterplot3d package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>)
+<span class="kw">library</span>(scatterplot3d) <span class="co"># if you are getting a error here, please make sure you have installed this package :)</span>
+<span class="kw">scatterplot3d</span>(
+  <span class="dt">x =</span> iris<span class="op">$</span>Sepal.Length,
+  <span class="dt">y =</span> iris<span class="op">$</span>Sepal.Width,
+  <span class="dt">z =</span> iris<span class="op">$</span>Petal.Length,
+  <span class="dt">pch =</span> <span class="dv">16</span>,
+  <span class="dt">color =</span> colors[iris<span class="op">$</span>Species], <span class="co">#assign a color based on each specie </span>
+  <span class="dt">grid =</span> <span class="ot">TRUE</span>,
+  <span class="dt">box =</span> <span class="ot">TRUE</span>,
+  <span class="dt">xlab =</span> <span class="st">&quot;Sepal length&quot;</span>,
+  <span class="dt">ylab =</span> <span class="st">&quot;Sepal width&quot;</span>,
+  <span class="dt">zlab =</span> <span class="st">&quot;Petal length&quot;</span>
+)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+<div id="histograms" class="section level2">
+<h2><span class="header-section-number">5.2</span> Histograms</h2>
+<p>We use histograms as one of the first steps in any exploratory data analysis. R offers flexible tools to create histograms. For this example we are going to use <em>ToothGrowth</em> dataset which contains the result from an experiment studying the effect of vitamin C on tooth growth in 60 Guinea pigs.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a histogram for Toothgrowth in light blue with the y axis</span>
+<span class="co"># ranging from 0-10</span>
+<span class="kw">hist</span>(ToothGrowth<span class="op">$</span>len, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>We can customize colors, scales and many more items in our histogram!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compute the largest y value used in this data</span>
+max_num &lt;-<span class="st"> </span><span class="kw">max</span>(ToothGrowth<span class="op">$</span>len)
+<span class="co"># Create a histogram for this dataset with fire colors, set breaks</span>
+<span class="co"># so each number is in its own group, make x axis range from</span>
+<span class="co"># 0-max_num, disable right-closing of cell intervals, set</span>
+<span class="co"># heading, and make y-axis labels horizontal</span>
+<span class="kw">hist</span>(
+  ToothGrowth<span class="op">$</span>len,
+  <span class="dt">col =</span> <span class="kw">heat.colors</span>(max_num),
+  <span class="dt">breaks =</span> max_num,
+  <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="dv">0</span>, max_num),
+  <span class="dt">right =</span> F,
+  <span class="dt">main =</span> <span class="st">&quot;Tooth Histogram&quot;</span>,
+  <span class="dt">xlab =</span> <span class="st">&quot;Tooth length&quot;</span>,
+  <span class="dt">las =</span> <span class="dv">1</span>
+)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div id="boxplots" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Boxplots</h3>
+<p>We can create boxplots, boxplots by groups and boxplots by combinations of groups using boxplot() function. This is very useful when you want to check the data distribution visually:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(iris)
+<span class="kw">boxplot</span>(
+  Sepal.Length <span class="op">~</span><span class="st"> </span>Species,
+  <span class="dt">data =</span> iris,
+  <span class="dt">main =</span> <span class="st">&quot;Sepal Length for Iris dataset&quot;</span>,
+  <span class="dt">xlab =</span> <span class="st">&quot;Specie&quot;</span>,
+  <span class="dt">ylab =</span> <span class="st">&quot;Length&quot;</span>
+)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+</div>
+<div id="other-tips" class="section level2">
+<h2><span class="header-section-number">5.3</span> Other tips</h2>
+<p>Summary of useful plotting functions:</p>
+<ul>
+<li><p>plot(), hist() and other functions - popular generic high-level function;</p></li>
+<li><p>curve() - Produces new or adds curves to existing plots;</p></li>
+<li><p>segments() - Adds line segments with pairs of point;</p></li>
+<li><p>abline() - Adds linear lines to existing plot based on intercept and slope;</p></li>
+<li><p>lines() - Adds lines to existing plot based on coordinates;</p></li>
+<li><p>points() - Adds points to existing plot based on coordinates;</p></li>
+<li><p>arrows() - Draws arrows between pairs of points;</p></li>
+<li><p>polygon() - Draws polygons;</p></li>
+<li><p>rect() - Adds a rectangle with the given coordinates, ﬁll and border colors;</p></li>
+<li><p>text() - Adds text to the plots given coordinate in x and y;</p></li>
+</ul>
+<p>Additional functions:</p>
+<ul>
+<li><p>title() - Adds titles;</p></li>
+<li><p>box() -Adds a box around the plots:</p></li>
+<li><p>mtext() -Add text to the four margins;</p></li>
+<li><p>axis() - Adds an axis to the current plot.</p></li>
+</ul>
+</div>
+<div id="project-1" class="section level2">
+<h2><span class="header-section-number">5.4</span> Project 1</h2>
+<ol style="list-style-type: decimal">
+<li>Using the dataset discoveries <span class="math inline">\(data(discoveries)\)</span>, answer the following questions:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>Depict discoveries per year using the plot function with blue line.</p></li>
+<li><p>Which decade has the largest number of discoveries?</p></li>
+<li><p>Set the title, x and y axis properly</p></li>
+</ol>
+</div>
+<div id="project-2" class="section level2">
+<h2><span class="header-section-number">5.5</span> Project 2</h2>
+<p>Using the CO2 dataset <span class="math inline">\(data(CO2)\)</span> and histograms, answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li>Group each plant specie as follows:</li>
+</ol>
+<ul>
+<li>Qnx as plant 1</li>
+<li>Qcx as plant 2</li>
+<li>Mnx as plant 3</li>
+<li>Mcx as plant 4</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Choose two of the grouped species and check their distributions using histograms</p></li>
+<li><p>Interpret the results</p></li>
+</ol>
+<p><strong>Homework 1</strong></p>
+<ol style="list-style-type: decimal">
+<li>Using the mtcars dataset <span class="math inline">\(data(mtcars)\)</span>, answer the following questions:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>Use the scatterplots to check cars’ hoursepower vs fuel usage</p></li>
+<li><p>Use your past knowledge and estimate the linear regression</p></li>
+<li><p>Depict the linear regression as a line</p></li>
+<li><p>Add a proper legend, title and axes.</p></li>
+</ol>
+<ol start="2" style="list-style-type: decimal">
+<li>Using the iris dataset and boxplots answer the following questions:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>Compare each specie by petal width and petal length</p></li>
+<li><p>Which is the median value for setosa in both boxplots</p></li>
+<li><p>What specie has the largest specie petal width?</p></li>
+<li><p>Can you recognize outliers in the dataset, which specie?</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
