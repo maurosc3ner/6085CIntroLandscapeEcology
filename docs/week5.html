@@ -225,14 +225,14 @@ meningits_labels &lt;-<span class="st"> </span><span class="kw">paste</span>(men
        <span class="kw">c</span>(<span class="st">&quot;Mon&quot;</span>, <span class="st">&quot;Tue&quot;</span>, <span class="st">&quot;Wed&quot;</span>, <span class="st">&quot;Thu&quot;</span>, <span class="st">&quot;Fri&quot;</span>),
        <span class="dt">cex =</span> <span class="fl">0.8</span>,
        <span class="dt">fill =</span> colors)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="lines-and-scatterplots" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> Lines and Scatterplots</h3>
 <p>Line charts are the simplest way to explore your data, suppose we have flu cases reported for an entire week:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">flucases &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">11</span>,<span class="dv">10</span>,<span class="dv">4</span>)
 <span class="kw">plot</span>(flucases)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-3-1.png" width="672" /></p>
 <p>We are going to customize our plot by adding a proper title and axes:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(
   flucases,
@@ -248,7 +248,7 @@ meningits_labels &lt;-<span class="st"> </span><span class="kw">paste</span>(men
 <span class="kw">title</span>(<span class="dt">main =</span> <span class="st">&quot;Flu cases at Clifton&quot;</span>,
       <span class="dt">col.main =</span> <span class="st">&quot;red&quot;</span>,
       <span class="dt">font.main =</span> <span class="dv">4</span>)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-4-1.png" width="672" /></p>
 <p>Now suppose you have the data for daily temperature at Clifton, and want to make a visual comparison:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temperature &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">12</span>)
 
@@ -285,7 +285,7 @@ meningits_labels &lt;-<span class="st"> </span><span class="kw">paste</span>(men
   <span class="dt">pch =</span> <span class="dv">21</span><span class="op">:</span><span class="dv">22</span>,
   <span class="dt">lty =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>
 )</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="scatterplots" class="section level3">
 <h3><span class="header-section-number">5.1.3</span> Scatterplots</h3>
@@ -299,7 +299,7 @@ meningits_labels &lt;-<span class="st"> </span><span class="kw">paste</span>(men
   <span class="dt">ylab =</span> <span class="st">&quot;Miles Per Gallon &quot;</span>,
   <span class="dt">pch =</span> <span class="dv">19</span>
 )</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-6-1.png" width="672" /></p>
 <p>But also, more complex comparisons can be performed in R using scatterplot3d package:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">colors &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>)
 <span class="kw">library</span>(scatterplot3d) <span class="co"># if you are getting a error here, please make sure you have installed this package :)</span>
@@ -315,7 +315,7 @@ meningits_labels &lt;-<span class="st"> </span><span class="kw">paste</span>(men
   <span class="dt">ylab =</span> <span class="st">&quot;Sepal width&quot;</span>,
   <span class="dt">zlab =</span> <span class="st">&quot;Petal length&quot;</span>
 )</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 </div>
 <div id="histograms" class="section level2">
@@ -324,7 +324,7 @@ meningits_labels &lt;-<span class="st"> </span><span class="kw">paste</span>(men
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a histogram for Toothgrowth in light blue with the y axis</span>
 <span class="co"># ranging from 0-10</span>
 <span class="kw">hist</span>(ToothGrowth<span class="op">$</span>len, <span class="dt">col=</span><span class="st">&quot;lightblue&quot;</span>)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-8-1.png" width="672" /></p>
 <p>We can customize colors, scales and many more items in our histogram!</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Compute the largest y value used in this data</span>
 max_num &lt;-<span class="st"> </span><span class="kw">max</span>(ToothGrowth<span class="op">$</span>len)
@@ -342,7 +342,7 @@ max_num &lt;-<span class="st"> </span><span class="kw">max</span>(ToothGrowth<sp
   <span class="dt">xlab =</span> <span class="st">&quot;Tooth length&quot;</span>,
   <span class="dt">las =</span> <span class="dv">1</span>
 )</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-9-1.png" width="672" /></p>
 <div id="boxplots" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Boxplots</h3>
 <p>We can create boxplots, boxplots by groups and boxplots by combinations of groups using boxplot() function. This is very useful when you want to check the data distribution visually:</p>
@@ -354,7 +354,7 @@ max_num &lt;-<span class="st"> </span><span class="kw">max</span>(ToothGrowth<sp
   <span class="dt">xlab =</span> <span class="st">&quot;Specie&quot;</span>,
   <span class="dt">ylab =</span> <span class="st">&quot;Length&quot;</span>
 )</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 </div>
 <div id="other-tips" class="section level2">
