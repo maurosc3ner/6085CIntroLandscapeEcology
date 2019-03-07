@@ -1,13 +1,143 @@
-# Landscape Disturbance Dynamics {week5}
+---
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+# Mapping in R {#week6}
 
-## Requirements
+## Basics
 
-**Chapter 6** - Landscape Disturbance Dynamics. [@turner_2015]
+### Tiles
 
-## Theory
+_"A tile map (raster or vector) is a map displayed in a browser by seamlessly joining dozens of individually requested image files over the internet."_
 
-Some _theory_ goes here.
+Let's create a simple map:
 
-## Lab: Introduction to landscape metrics
+```{r}
+library(leaflet)   # load the library
+mymap<-leaflet() %>%
+  addTiles # images you are going to see
+mymap   #check the map
+```
 
-**Chapter 5** - Variograms and semivariograms. [@gergel_2001]
+Now, it is time to explore different tiles:
+
+CartoDB:
+
+```{r}
+mymap<-leaflet() %>%
+  addProviderTiles(provider ="CartoDB.Positron")
+mymap   #check the map
+```
+
+ESRI World Imagery:
+
+```{r}
+mymap<-leaflet() %>%
+  addProviderTiles(provider ="Esri.WorldImagery")
+mymap   #check the map
+```
+
+Night lights:
+
+```{r}
+mymap<-leaflet() %>%
+  addProviderTiles(provider ="NASAGIBS.ViirsEarthAtNight2012")
+mymap   #check the map
+```
+
+Now that we have the basic map, let's populate it with some fun projects!
+
+## Project 1: Load data points
+
+Download the datasets available in canopy (*csv):
+
+```{r,eval=FALSE}
+data<-read.csv("MOCK_DATA.csv")
+
+mymap<-leaflet(data = data) %>%
+  addTiles %>% # images you are going to see
+  addMarkers(lng = ~long,
+             lat = ~lat,
+             popup = ~city)
+mymap   #check the map
+```
+
+* Remember these dataset have no real data, it was created for learning purposes.
+
+## Project 2: Processing your data
+
+```{r, eval=FALSE}
+data<-read.csv("MOCK_DATA2.csv")
+
+mymap<-leaflet(data=data) %>%
+  addTiles %>% # images you are going to see
+  addMarkers(lng = ~long,
+             lat = ~lat,
+             popup = ~country)
+mymap   #check the map
+
+# EX 3  Filter by US
+rm(list = ls())
+data<-read.csv("MOCK_DATA2.csv")
+
+onlyUS<-data[data$country=="US",]
+
+cleanUS<-na.omit(onlyUS)
+
+mymap<-leaflet(data = cleanUS) %>%
+  addTiles %>% # images you are going to see
+  addMarkers(lng = ~long,
+             lat = ~lat,
+             popup = ~income)
+mymap   #check the map
+```
+
+## Project 3: Adding a legend
+
+```{r, eval=FALSE}
+rm(list = ls())
+data<-read.csv("MOCK_DATA2.csv")
+
+onlyUS<-data[data$country=="US",]
+
+cleanUS<-na.omit(onlyUS)
+
+pal = colorNumeric("RdYlBu", domain = cleanUS$income)
+
+mymap<-leaflet(data = cleanUS) %>%
+  addTiles %>% # images you are going to see
+  addCircles(lng = ~long,
+             lat = ~lat,
+             popup = ~city,
+             radius = ~sqrt(income)*200,
+             color = ~pal(income),
+             fillOpacity = 1,
+             opacity = 1) %>%
+  addLegend(title = "Income",pal = pal, values = ~income,position = "bottomright") 
+mymap   #Generate your map
+```
+
+### Homework
+
+1. Using the fake data depicts North America cities (Mexico, Canada, United States).
+
+2. Create your own dataset with the top 10 largest cities in Ohio. Remember to include for each city:
++ City name
++ lat and long coordinates 
++ Income
++ Population
++ The expected answer should be a CSV file
+
+3. Load your Ohio dataset into the leaflet map and show the city as pop up message.
+
+4. Add the proper circles and legends. (Bonus point)
+  
+### Useful links
+
+1. https://mockaroo.com/
+
+2. https://www.latlong.net/
+
+3. https://rstudio.github.io/leaflet/
