@@ -24,8 +24,7 @@ biblio-style: apalike
 
 ## Introduction of the TAs {-}
 
-* Andres Hernandez-Camacho M.Sc. https://github.com/andher1802
-* Esteban Correa-Agudelo M.Sc. https://github.com/maurosc3ner  
+* Andres Hernandez-Camacho M.Sc.
 * Format of the Lab sessions:
     + This is not a class on statistics !!!!
     + Only a brief introduction about the use of the tool for a better understanding of the landscape ecology applications. 
@@ -54,13 +53,17 @@ schedule <- c( "",
 "**Week 6 – Lab assignmentc 6**",
 "Introduction to landscape metrics. Chapter 4 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques",
 "**Week 7 – Lab assignment 7**",
-"Variograms and semivariograms. Chapter 5 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques",
+"Getting started with ArcGIS I. Examine Global Poverty Using UN Sustainable Development Goals",
 "**Week 8 – Lab assignment 8**",
-"Characterizing categorical landscape patterns. Chapter 6 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques",
-"**Week 11 – Lab assignment 9**",
-"Introduction to Markov Models. Chapter 8 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques.",
-"**Week 12 – Lab assignment 10**",
-"Disturbances and network applications in landscape ecology. Chapter 11 & 12 in Gergel, S. E., & Turner, M. G. (2002). Learning landscape ecology: A practical guide to concepts and techniques."
+"Getting started with ArcGIS II. Map the impact of roads on deforestation in the Amazon rain forest",
+"**Week 9 – Lab assignment 10**",
+"Interpolation with ArcGIS.Use interpolation to analyze dissolved oxygen levels in Chesapeake Bay",
+"**Week 10 - No assignment**",
+"Spring break",
+"**Week 11 – Lab assignment 11**",
+"Modeling with ArcGIS I.Build a Model to Connect Mountain Lion Habitat",
+"**Week 12 – Lab assignment 12**",
+"Modeling with ArcGIS II.Build a Model to Connect Mountain Lion Habitat"
 )
 
 library(knitr)
