@@ -1,14 +1,97 @@
-# Organisms and Landscape Pattern {#week7}
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Landscape analysis in R {#week7}
 
-## Requirements
+Landscape metrics is an R package for calculating landscape metrics for categorical landscape patterns in a tidy workflow. The package can be used as a drop-in replacement for FRAGSTATS, as it offers a reproducible workflow for landscape analysis in a single environment.
+It also allows for calculations of four theoretical metrics of landscape complexity:
++ Overall spatio-thematic complexity,
++ Thematic complexity,
++ Configurational complexity,
++ Disambiguator of pattern types having the same overall complexity (Nowosad and Stepinski 2018).
 
-**Chapter 7** - Organisms and Landscape Pattern. [@turner_2015]
+Landscape metrics supports raster spatial objects and takes RasterLayer, RasterStacks, RasterBricks or lists of RasterLayer as input arguments. Every function can be used in a piped workflow, as it always takes the data as the first argument and returns a tibble
 
-## Theory
 
-Some _theory_ goes here.
+Firstly install the proper libraries to handle raster data in R. You can achieve this by typing into the R Studio console or using the Install Packages menu (_Tools->Install Packages..._)
 
-## Lab: Characterizing categorical landscape patterns
+```{r, eval=FALSE}
+install.packages("landscapemetrics")
+install.packages("landscapetools")
+```
 
-**Chapter 6** - Characterizing categorical landscape patterns. [@gerger_2001]
+
+The resolution of a raster cell has to be in meters, as the package converts units internally and returns results in either meters, square meters or hectares. Before using landscapemetrics, be sure to check your raster (see check_raster()).
+All functions in landscapemetrics start with lsm_ (for landscapemetrics). The second part of the name specifies the level (patch - p, class - c or landscape - l). The last part of the function name is the abbreviation of the corresponding metric (e.g. ennfor the euclidean nearest-neighbor distance):
+
+## Using metric functions
+
+Every function follows the same implementation design, so the usage is quite straightforward:
+
+```{r}
+library(landscapemetrics)
+library(landscapetools)
+data("landscape")
+# landscape raster
+show_landscape(landscape)
+```
+
+Save your raster using the writeRaster functionality of past lab session:
+
+```{r,warning=FALSE}
+library(raster)
+library(rgdal)
+
+rf <- writeRaster(landscape, filename="myRaster.tif",  overwrite=TRUE)
+```
+
+## Lab Practice
+
+Load lab11_assignment.tif in fragstats 
+
+```{r}
+el1 <- raster("lab11_assignment.tif")
+show_landscape(el1)
+```
+
+Let's estimate the following metrics:
++ Euclidean nearest-neighbor distance by patch
++ Total edge by class
++ Total area by landscape level 
+
+```{r}
+lsm_p_enn(el1, directions = 8, verbose = TRUE)
+lsm_l_ta(el1)
+lsm_c_te(el1)
+```
+
+If you want to calculate all the stats you can type: 
+
+```{r}
+fullStats<-calculate_lsm(el1, level = "patch")
+# Show only the first 10 patch stats
+head(fullStats)
+```
+
+How many stats did you get using calculate_lsm?
+
+# Frequently asked questions
+
+**I am getting path issues**
+
+_Please check again working directory and the path of your raster file. Any typo error can cause this issue._
+
+**I am getting errors**
+
+_Sometimes R packages gives you different execution errors. Our advice is to install the last R software (3.5.3) and R Studio in order to get latest functionalities and bug fixes. Also this lab has been tested entirely in the 415 lab computers. You can also take the most of that facility._
+
+**It is too slow**
+
+_These are complex calculations, be patient :)_
+
+# References
+
+[1] https://r-spatialecology.github.io/landscapemetrics/
 
