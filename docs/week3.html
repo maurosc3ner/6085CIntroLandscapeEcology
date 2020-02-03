@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 3 Functions and loops | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS</title>
-  <meta name="description" content="Chapter 3 Functions and loops | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown">
+  <title>Chapter 3 Functions and loops | Introduction to Lanscape Ecology &amp; GIS</title>
+  <meta name="description" content="Chapter 3 Functions and loops | Introduction to Lanscape Ecology &amp; GIS R Markdown">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 3 Functions and loops | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS" />
+  <meta property="og:title" content="Chapter 3 Functions and loops | Introduction to Lanscape Ecology &amp; GIS" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 3 Functions and loops | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  <meta property="og:description" content="Chapter 3 Functions and loops | Introduction to Lanscape Ecology &amp; GIS R Markdown" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Functions and loops | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS" />
+  <meta name="twitter:title" content="Chapter 3 Functions and loops | Introduction to Lanscape Ecology &amp; GIS" />
   
-  <meta name="twitter:description" content="Chapter 3 Functions and loops | 5085c/6015c Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  <meta name="twitter:description" content="Chapter 3 Functions and loops | Introduction to Lanscape Ecology &amp; GIS R Markdown" />
   
 
 
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="week2.html">
-<link rel="next" href="week4.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,41 +49,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -147,30 +173,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.3.6" data-path="week3.html"><a href="week3.html#loops"><i class="fa fa-check"></i><b>3.3.6</b> Loops:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="week4.html"><a href="week4.html"><i class="fa fa-check"></i><b>4</b> Linear Regression</a><ul>
-<li class="chapter" data-level="4.1" data-path="week4.html"><a href="week4.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.1</b> Simple Linear Regression</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="week4.html"><a href="week4.html#example-1."><i class="fa fa-check"></i><b>4.1.1</b> Example 1.</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="week4.html"><a href="week4.html#multiple-linear-regression"><i class="fa fa-check"></i><b>4.2</b> Multiple Linear Regression</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="week4.html"><a href="week4.html#example-1.-1"><i class="fa fa-check"></i><b>4.2.1</b> Example 1.</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="week4.html"><a href="week4.html#linear-models-with-categorical-and-binomial-outputs"><i class="fa fa-check"></i><b>4.3</b> Linear models with categorical and binomial outputs</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="week5.html"><a href="week5.html"><i class="fa fa-check"></i><b>5</b> Data Visualization in R</a><ul>
-<li class="chapter" data-level="5.1" data-path="week5.html"><a href="week5.html#basics"><i class="fa fa-check"></i><b>5.1</b> Basics</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="week5.html"><a href="week5.html#pie-charts"><i class="fa fa-check"></i><b>5.1.1</b> Pie-charts</a></li>
-<li class="chapter" data-level="5.1.2" data-path="week5.html"><a href="week5.html#lines-and-scatterplots"><i class="fa fa-check"></i><b>5.1.2</b> Lines and Scatterplots</a></li>
-<li class="chapter" data-level="5.1.3" data-path="week5.html"><a href="week5.html#scatterplots"><i class="fa fa-check"></i><b>5.1.3</b> Scatterplots</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="week5.html"><a href="week5.html#histograms"><i class="fa fa-check"></i><b>5.2</b> Histograms</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="week5.html"><a href="week5.html#boxplots"><i class="fa fa-check"></i><b>5.2.1</b> Boxplots</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="week5.html"><a href="week5.html#other-tips"><i class="fa fa-check"></i><b>5.3</b> Other tips</a></li>
-<li class="chapter" data-level="5.4" data-path="week5.html"><a href="week5.html#project-1"><i class="fa fa-check"></i><b>5.4</b> Project 1</a></li>
-<li class="chapter" data-level="5.5" data-path="week5.html"><a href="week5.html#project-2"><i class="fa fa-check"></i><b>5.5</b> Project 2</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="week5.html"><a href="week5.html#homework"><i class="fa fa-check"></i><b>5.5.1</b> Homework</a></li>
-</ul></li>
-</ul></li>
 <li class="divider"></li>
 <li><a href="mailto:correaem@mail.uc.edu" target="blank">contact</a></li>
 
@@ -183,7 +185,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">5085c/6015c Introduction to Lanscape Ecology &amp; GIS</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Lanscape Ecology &amp; GIS</a>
           </h1>
         </div>
 
@@ -193,59 +195,68 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="week3" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Functions and loops</h1>
-<!-- # Functions and loops {#week3} -->
 <div id="why-do-we-need-functions" class="section level2">
 <h2><span class="header-section-number">3.1</span> Why do we need functions?</h2>
 <p>Consider that you need to apply an operation over the elements of a vector. For example, remove all the elements that are maximum over a set of values:</p>
 <p>One way to do this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>)
+<pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">9</span>)
 x.max &lt;-<span class="st"> </span><span class="kw">max</span>(x)
 y &lt;-<span class="st"> </span>x[x <span class="op">!=</span><span class="st"> </span>x.max]
-y</code></pre></div>
+y</code></pre>
 <pre><code>##  [1] 1 3 8 3 4 5 5 2 4 5</code></pre>
-<p>If you want to do the same operation on many other vectors, you have to repeat the same 3 lines for each vector. This is not optimal because: - Code is more complex (more lines of the code). - More probability of errors.</p>
+<p>If you want to do the same operation on many other vectors, you have to repeat the same 3 lines for each vector.
+This is not optimal because:
+- Code is more complex (more lines of the code).
+- More probability of errors.</p>
 <p>A function is a piece of code that you can apply over many objects, using a predefined structure. We have been using functions already, however these functions are built-in in R.</p>
 <p>sort(), which.max(), mean()</p>
 <p>All of them are functions in r.</p>
-<p>We can also create our own functions: - A function has always three main elements: - name - parameters (input, and output) - body</p>
+<p>We can also create our own functions:
+- A function has always three main elements:
+- name
+- parameters (input, and output)
+- body</p>
 <p>For our previous example:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">function.name &lt;-<span class="st"> </span><span class="cf">function</span> (input.parameter) {
+<pre class="sourceCode r"><code class="sourceCode r">function.name &lt;-<span class="st"> </span><span class="cf">function</span> (input.parameter) {
   max.value &lt;-<span class="st"> </span><span class="kw">max</span>(input.parameter)
   output &lt;-<span class="st"> </span>input.parameter[input.parameter <span class="op">!=</span><span class="st"> </span>max.value]
   <span class="kw">return</span>(output)
-}</code></pre></div>
-<p>In this example: - function.name corresponds to the name of the function. - input.parameter corresponds to the input parameter. (could be one or more, separated by comma). - return(output) is the command for returning the output.</p>
+}</code></pre>
+<p>In this example:
+- function.name corresponds to the name of the function.
+- input.parameter corresponds to the input parameter. (could be one or more, separated by comma).
+- return(output) is the command for returning the output.</p>
 <p>A more meaningful, and standard definition for our function for the previous example should be:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">remove.max &lt;-<span class="st"> </span><span class="cf">function</span> (input.vector) {
+<pre class="sourceCode r"><code class="sourceCode r">remove.max &lt;-<span class="st"> </span><span class="cf">function</span> (input.vector) {
   max.value &lt;-<span class="st"> </span><span class="kw">max</span>(input.vector)
   output.vector &lt;-<span class="st"> </span>input.vector[input.vector <span class="op">!=</span><span class="st"> </span>max.value]
   <span class="kw">return</span>(output.vector)
-}</code></pre></div>
+}</code></pre>
 <p>Lets test our function with several inputs.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">input.vector.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">9</span>)
-<span class="kw">remove.max</span>(input.vector.<span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">input.vector<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">9</span>)
+<span class="kw">remove.max</span>(input.vector<span class="fl">.1</span>)</code></pre>
 <pre><code>##  [1] 1 3 8 3 4 5 5 2 4 5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">input.vector.<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">11</span>,<span class="dv">2</span>,<span class="dv">11</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">8</span>)
-<span class="kw">remove.max</span>(input.vector.<span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">input.vector<span class="fl">.2</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">11</span>,<span class="dv">2</span>,<span class="dv">11</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">8</span>)
+<span class="kw">remove.max</span>(input.vector<span class="fl">.2</span>)</code></pre>
 <pre><code>##  [1]  2  5  8  5  6  3  5  9 10  8</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">input.vector.<span class="dv">3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">15</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">15</span>,<span class="dv">1</span>)
-<span class="kw">remove.max</span>(input.vector.<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">input.vector<span class="fl">.3</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">15</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">15</span>,<span class="dv">1</span>)
+<span class="kw">remove.max</span>(input.vector<span class="fl">.3</span>)</code></pre>
 <pre><code>## [1] 1 2 6 8 1</code></pre>
 <p>Now we want to create a function to remove ONLY!!! the first maximum element of a vector</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">input.vector.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">9</span>)
+<pre class="sourceCode r"><code class="sourceCode r">input.vector<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">9</span>)
 remove.first.max &lt;-<span class="st"> </span><span class="cf">function</span> (input.vector) {
   first.max.input &lt;-<span class="st"> </span><span class="kw">which.max</span>(input.vector)
   output.vector &lt;-<span class="st"> </span>input.vector[<span class="op">-</span>first.max.input]
   <span class="kw">return</span>(output.vector)
 }
-<span class="kw">remove.first.max</span>(input.vector.<span class="dv">1</span>)</code></pre></div>
+<span class="kw">remove.first.max</span>(input.vector<span class="fl">.1</span>)</code></pre>
 <pre><code>##  [1] 1 3 8 9 3 4 5 5 2 9 4 5 9</code></pre>
 <p>Now suppose that we want to have only one function that allows to choose between removing the first maximum element and all the maximum elements.</p>
 <p>This is allowed by the use of several input parameters, and other complementary bult-in functions:</p>
 <ul>
 <li>If/else statements</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">input.vector.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">9</span>)
+<pre class="sourceCode r"><code class="sourceCode r">input.vector<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">9</span>)
 remove.max.choose &lt;-<span class="st"> </span><span class="cf">function</span> (input.vector, first) {
   <span class="cf">if</span>(first) {
     max.value &lt;-<span class="st"> </span><span class="kw">max</span>(input.vector)
@@ -257,19 +268,19 @@ remove.max.choose &lt;-<span class="st"> </span><span class="cf">function</span>
   <span class="kw">return</span>(output.vector)
 }
 
-<span class="kw">remove.max.choose</span>(input.vector.<span class="dv">1</span>, <span class="ot">TRUE</span>)</code></pre></div>
+<span class="kw">remove.max.choose</span>(input.vector<span class="fl">.1</span>, <span class="ot">TRUE</span>)</code></pre>
 <pre><code>##  [1] 1 3 8 3 4 5 5 2 4 5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">remove.max.choose</span>(input.vector.<span class="dv">1</span>, <span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">remove.max.choose</span>(input.vector<span class="fl">.1</span>, <span class="ot">FALSE</span>)</code></pre>
 <pre><code>##  [1] 1 3 8 9 3 4 5 5 2 9 4 5 9</code></pre>
 </div>
 <div id="for-loop" class="section level2">
 <h2><span class="header-section-number">3.2</span> FOR LOOP</h2>
 <p>A for loop is a command that allows to iterate over the elements of a vector or iterable element.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vector.input.<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)
+<pre class="sourceCode r"><code class="sourceCode r">vector.input<span class="fl">.1</span> &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)
 
-<span class="cf">for</span> (each.element <span class="cf">in</span> vector.input.<span class="dv">1</span>) {
+<span class="cf">for</span> (each.element <span class="cf">in</span> vector.input<span class="fl">.1</span>) {
   <span class="kw">print</span>(each.element)
-}</code></pre></div>
+}</code></pre>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3
@@ -297,10 +308,13 @@ remove.max.choose &lt;-<span class="st"> </span><span class="cf">function</span>
 <div id="project-3-get-fibonacci-numbers-up-to-200" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> Project 3: get Fibonacci numbers up to 200</h3>
 <ul>
-<li><p>The Fibonacci numbers are: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ???</p></li>
-<li><p>The above sequence satisfies two rules: ??? Starting from the third element, each element is</p></li>
+<li><p>The Fibonacci numbers are:
+1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ???</p></li>
+<li><p>The above sequence satisfies two rules:
+??? Starting from the third element, each element is</p></li>
 </ul>
-<p>the sum of the two previous elements. ??? The sequence starts with 1, 1. - How to ask R to create a vector that contains the Fibonacci numbers up to 200 (i.e., &lt;200)?</p>
+<p>the sum of the two previous elements. ??? The sequence starts with 1, 1.
+- How to ask R to create a vector that contains the Fibonacci numbers up to 200 (i.e., &lt;200)?</p>
 </div>
 <div id="videos" class="section level3">
 <h3><span class="header-section-number">3.3.4</span> Videos</h3>
@@ -323,8 +337,8 @@ remove.max.choose &lt;-<span class="st"> </span><span class="cf">function</span>
           </div>
         </div>
       </div>
-<a href="week2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

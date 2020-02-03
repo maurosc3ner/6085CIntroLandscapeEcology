@@ -1,13 +1,9 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 # Functions and loops {#week3}
-
-
-
-<!-- # Functions and loops {#week3} -->
 
 ## Why do we need functions?
 
