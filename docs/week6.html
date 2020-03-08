@@ -254,27 +254,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 mymap&lt;-<span class="kw">leaflet</span>() <span class="op">%&gt;%</span>
 <span class="st">  </span>addTiles <span class="co"># images you are going to see</span>
 mymap   <span class="co">#check the map</span></code></pre>
-<div id="htmlwidget-8c0f3dbbd66b3fd072fe" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8c0f3dbbd66b3fd072fe">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ef63b691837b33f24879" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ef63b691837b33f24879">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}]},"evals":[],"jsHooks":[]}</script>
 <p>Now, it is time to explore different tiles:</p>
 <p>CartoDB:</p>
 <pre class="sourceCode r"><code class="sourceCode r">mymap&lt;-<span class="kw">leaflet</span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">addProviderTiles</span>(<span class="dt">provider =</span><span class="st">&quot;CartoDB.Positron&quot;</span>)
 mymap   <span class="co">#check the map</span></code></pre>
-<div id="htmlwidget-89100a7e3b79be87df5a" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-89100a7e3b79be87df5a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-018ef492aa06f2ac7cff" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-018ef492aa06f2ac7cff">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
 <p>ESRI World Imagery:</p>
 <pre class="sourceCode r"><code class="sourceCode r">mymap&lt;-<span class="kw">leaflet</span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">addProviderTiles</span>(<span class="dt">provider =</span><span class="st">&quot;Esri.WorldImagery&quot;</span>)
 mymap   <span class="co">#check the map</span></code></pre>
-<div id="htmlwidget-1614caaa53e67c76f86d" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1614caaa53e67c76f86d">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ef4c05b8d96cf423a0ac" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ef4c05b8d96cf423a0ac">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
 <p>Night lights:</p>
 <pre class="sourceCode r"><code class="sourceCode r">mymap&lt;-<span class="kw">leaflet</span>() <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">addProviderTiles</span>(<span class="dt">provider =</span><span class="st">&quot;NASAGIBS.ViirsEarthAtNight2012&quot;</span>)
 mymap   <span class="co">#check the map</span></code></pre>
-<div id="htmlwidget-595a702f96415408b228" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-595a702f96415408b228">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["NASAGIBS.ViirsEarthAtNight2012",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5eba39b78251b5203b73" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5eba39b78251b5203b73">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["NASAGIBS.ViirsEarthAtNight2012",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]}]},"evals":[],"jsHooks":[]}</script>
 <p>Now that we have the basic map, let’s populate it with some fun projects!</p>
 </div>
 </div>

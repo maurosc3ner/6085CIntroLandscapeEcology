@@ -5,7 +5,7 @@ rmd_files: ["index.Rmd",
 "04-Week4.Rmd",
 "05-Week5.Rmd",
 "06-Week6.Rmd", 
-#"07-Week7.Rmd",
+# "07-Week7.Rmd",
 "08-Week8.Rmd"
 ]
 delete_merged_file: true
