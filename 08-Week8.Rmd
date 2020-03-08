@@ -35,7 +35,7 @@ library(landscapemetrics)
 library(landscapetools)
 data("landscape")
 # landscape raster
-show_landscape(landscape)
+#show_landscape(landscape)
 ```
 
 Save your raster using the writeRaster functionality of past lab session:
@@ -53,7 +53,7 @@ Load lab11_assignment.tif in fragstats
 
 ```{r}
 el1 <- raster("lab11_assignment.tif")
-show_landscape(el1)
+#show_landscape(el1)
 ```
 
 Let's estimate the following metrics:

@@ -5,21 +5,21 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 4 Linear Regression | Introduction to Lanscape Ecology &amp; GIS</title>
-  <meta name="description" content="Chapter 4 Linear Regression | Introduction to Lanscape Ecology &amp; GIS R Markdown">
+  <title>Chapter 8 Frequently asked questions | Introduction to Lanscape Ecology &amp; GIS</title>
+  <meta name="description" content="Chapter 8 Frequently asked questions | Introduction to Lanscape Ecology &amp; GIS R Markdown">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 4 Linear Regression | Introduction to Lanscape Ecology &amp; GIS" />
+  <meta property="og:title" content="Chapter 8 Frequently asked questions | Introduction to Lanscape Ecology &amp; GIS" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Chapter 4 Linear Regression | Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  <meta property="og:description" content="Chapter 8 Frequently asked questions | Introduction to Lanscape Ecology &amp; GIS R Markdown" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Linear Regression | Introduction to Lanscape Ecology &amp; GIS" />
+  <meta name="twitter:title" content="Chapter 8 Frequently asked questions | Introduction to Lanscape Ecology &amp; GIS" />
   
-  <meta name="twitter:description" content="Chapter 4 Linear Regression | Introduction to Lanscape Ecology &amp; GIS R Markdown" />
+  <meta name="twitter:description" content="Chapter 8 Frequently asked questions | Introduction to Lanscape Ecology &amp; GIS R Markdown" />
   
 
 
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="week3.html">
-<link rel="next" href="week5.html">
+<link rel="prev" href="week8.html">
+<link rel="next" href="references-1.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -212,6 +212,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="week8.html"><a href="week8.html#using-metric-functions"><i class="fa fa-check"></i><b>7.1</b> Using metric functions</a></li>
 <li class="chapter" data-level="7.2" data-path="week8.html"><a href="week8.html#lab-practice"><i class="fa fa-check"></i><b>7.2</b> Lab Practice</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="frequently-asked-questions.html"><a href="frequently-asked-questions.html"><i class="fa fa-check"></i><b>8</b> Frequently asked questions</a></li>
+<li class="chapter" data-level="9" data-path="references-1.html"><a href="references-1.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
 <li class="divider"></li>
 <li><a href="mailto:correaem@mail.uc.edu" target="blank">contact</a></li>
 
@@ -232,158 +234,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week4" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Linear Regression</h1>
-<div id="simple-linear-regression" class="section level2">
-<h2><span class="header-section-number">4.1</span> Simple Linear Regression</h2>
-<div id="example-1." class="section level3">
-<h3><span class="header-section-number">4.1.1</span> Example 1.</h3>
-<p>To investigate how the blood alcohol level rises as the beer consumption increase, we randomly selected 10 students and get the following data (Beers: in unit of cups; BAL: blood alcohol level):</p>
-<pre class="sourceCode r"><code class="sourceCode r">Beers&lt;-<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">9</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>)
-BAL&lt;-<span class="kw">c</span>(<span class="fl">0.10</span>,<span class="fl">0.03</span>,<span class="fl">0.19</span>,<span class="fl">0.12</span>,<span class="fl">0.04</span>,<span class="fl">0.095</span>,<span class="fl">0.07</span>,<span class="fl">0.06</span>,<span class="fl">0.02</span>,<span class="fl">0.05</span>)
-<span class="kw">plot</span>(Beers, BAL) <span class="co"># Scatter plot for two variables (Independent variable vs. Dependent variable)</span></code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<ul>
-<li><p>We can see the trend: as the beer amount increases, the BAL also increases. The trend looks like linear.</p></li>
-<li><p>Assume that the true trend is a linear function, i.e., y = β1x + β0 (y=BAL, x=beer in cups), but unknown, how to use data to estimate the line (or equivalently, β1 and β0)?</p></li>
-<li><p>The estimated line should best “explain” the data. A natural criteria for the line should be that its coefficients (β0 and β1) that minimize, the error</p></li>
-<li><p>If a line satisfies the above criteria, we say that the line is the least square line.</p></li>
-<li><p>The process of finding the least square line is called a linear regression.</p></li>
-</ul>
-<p>In R, we use lm() to find the least square line.</p>
-<pre class="sourceCode r"><code class="sourceCode r">regression &lt;-<span class="st"> </span><span class="kw">lm</span>(BAL<span class="op">~</span>Beers) <span class="co">#lm( dependent variable~ independent varaible )</span>
-<span class="kw">summary</span>(regression)</code></pre>
-<pre><code>## 
-## Call:
-## lm(formula = BAL ~ Beers)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -0.0275 -0.0187 -0.0071  0.0194  0.0357 
-## 
-## Coefficients:
-##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -0.018500   0.019230  -0.962 0.364200    
-## Beers        0.019200   0.003511   5.469 0.000595 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 0.02483 on 8 degrees of freedom
-## Multiple R-squared:  0.789,  Adjusted R-squared:  0.7626 
-## F-statistic: 29.91 on 1 and 8 DF,  p-value: 0.0005953</code></pre>
-<p>We can also get confidence intervals for model parameters β0 and β1, using the confint() function and the lm() result.
-For example, let us find the 95% percent confidence interval for β0 and β1:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(regression)</code></pre>
-<pre><code>##                   2.5 %     97.5 %
-## (Intercept) -0.06284414 0.02584414
-## Beers        0.01110391 0.02729609</code></pre>
-<p>The column names are (1/2-95%/2) and (1/2+95%/2), where 95% is the confidence level. Notice that 97.5%-2.5%=95%.
-We can also predict the expected BAL for new Beers values, using the lm() result.
-For example, we can predict the expected BAL for Beers=4, Beers=6 and Beers=10:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(regression,<span class="dt">newdata=</span><span class="kw">data.frame</span>(<span class="dt">Beers=</span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">10</span>))) <span class="co">#Name of the data frame column should match with the previous model</span></code></pre>
-<pre><code>##      1      2      3 
-## 0.0583 0.0967 0.1735</code></pre>
-</div>
-</div>
-<div id="multiple-linear-regression" class="section level2">
-<h2><span class="header-section-number">4.2</span> Multiple Linear Regression</h2>
-<div id="example-1.-1" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Example 1.</h3>
-<p>Consider the data set mtcars. It gives a comparison between different car models in terms of miles per gallon (mpg), cylinder displacement (disp, in unit of cubic inch), horse power (hp), weight of the car (wt , in unit of 1000 lbs) and some more parameters.</p>
-<p>Suppose the true relation between mpg and disp, hp and wt is:</p>
-<p>E mpg = β0 + β1 ⋅ disp + β2 ⋅ hp + β3 ⋅ wt how to predict mpg by disp, hp and wt?</p>
-<p>This is similar to the previous BAL project. The only difference is that here we have 3 predictors (disp, hp and wt) and that we have only one predictor(Beer) in the previous BAL project.</p>
-<p>– With a single predictor, the regression is called a simple linear regression; with more than one parameter the regression is called a multiple linear regression.</p>
-<ul>
-<li>To find the least square estimate, we can also use the lm() function.</li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(mtcars) <span class="co"># Load dataset already validated by others in R. </span>
-mpg&lt;-mtcars<span class="op">$</span>mpg
-disp&lt;-mtcars<span class="op">$</span>disp;
-hp&lt;-mtcars<span class="op">$</span>hp
-wt&lt;-mtcars<span class="op">$</span>wt
-regressor.multiple &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg<span class="op">~</span>disp<span class="op">+</span>hp<span class="op">+</span>wt) <span class="co"># Add more varaibles with &#39;+&#39; sign</span>
-<span class="kw">summary</span>(regressor.multiple)</code></pre>
-<pre><code>## 
-## Call:
-## lm(formula = mpg ~ disp + hp + wt)
-## 
-## Residuals:
-##    Min     1Q Median     3Q    Max 
-## -3.891 -1.640 -0.172  1.061  5.861 
-## 
-## Coefficients:
-##              Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 37.105505   2.110815  17.579  &lt; 2e-16 ***
-## disp        -0.000937   0.010350  -0.091  0.92851    
-## hp          -0.031157   0.011436  -2.724  0.01097 *  
-## wt          -3.800891   1.066191  -3.565  0.00133 ** 
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 2.639 on 28 degrees of freedom
-## Multiple R-squared:  0.8268, Adjusted R-squared:  0.8083 
-## F-statistic: 44.57 on 3 and 28 DF,  p-value: 8.65e-11</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(regressor.multiple)</code></pre>
-<pre><code>##                   2.5 %       97.5 %
-## (Intercept) 32.78169625 41.429314293
-## disp        -0.02213750  0.020263482
-## hp          -0.05458171 -0.007731388
-## wt          -5.98488310 -1.616898063</code></pre>
-</div>
-</div>
-<div id="linear-models-with-categorical-and-binomial-outputs" class="section level2">
-<h2><span class="header-section-number">4.3</span> Linear models with categorical and binomial outputs</h2>
-<p>Let us consider the variable vs in the data set
-mtcars.</p>
-<ul>
-<li>It indicates whether a car has a V engine (vs=0) or a straight engine (vs=1).</li>
-<li>Now we wish to predict the engine type (vs) value using the cylinder displacement (disp) and the car weight (wt).</li>
-<li>Can we do this using lm()? In another word, can we perform a multiple regression?</li>
-</ul>
-<p>It is not appropriate to use the lm(), because that we want to predict a binary outcome, not a continuous one.
-– We do not want our predictions to be a value other than 0 or 1.
-- In this scenario, we need to perform a logistic regression, which are commonly used to analyze binary outcomes.</p>
-<p>In R, we use glm() with the argument family be “binomial”.
-– glm stands for “generalized linear model”.</p>
-<pre class="sourceCode r"><code class="sourceCode r">vs&lt;-mtcars<span class="op">$</span>vs
-<span class="kw">glm</span>(vs<span class="op">~</span>disp<span class="op">+</span>wt,<span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>)</code></pre>
-<pre><code>## 
-## Call:  glm(formula = vs ~ disp + wt, family = &quot;binomial&quot;)
-## 
-## Coefficients:
-## (Intercept)         disp           wt  
-##     1.60859     -0.03443      1.62635  
-## 
-## Degrees of Freedom: 31 Total (i.e. Null);  29 Residual
-## Null Deviance:       43.86 
-## Residual Deviance: 21.4  AIC: 27.4</code></pre>
-<p>We specify the argument family as “binomial”, because the outcome is a binary outcome.</p>
-<ul>
-<li><p>The model is a little different from that of linear regression.</p></li>
-<li><p>Like in the linear regression, we can also use the glm() results to do many things, such as hypothesis testing, confidence interval and predictions.</p></li>
-<li><p>To do the hypothesis testing and to compute confidence interval, we need to understand the model more. Therefore, in this class we only focus on prediction.</p></li>
-<li><p>For example, we wish to predict the probability of a straight engine, for a car model with weight 2100 lbs and engine displacement of 180 cubic inches.</p></li>
-</ul>
-<pre class="sourceCode r"><code class="sourceCode r">glm.result &lt;-<span class="st"> </span><span class="kw">glm</span>(vs<span class="op">~</span>disp<span class="op">+</span>wt,<span class="dt">family=</span><span class="st">&quot;binomial&quot;</span>)
-<span class="kw">predict</span>(glm.result,<span class="kw">data.frame</span>(<span class="dt">disp=</span><span class="dv">180</span>,<span class="dt">wt=</span><span class="fl">2.1</span>), <span class="dt">type=</span><span class="st">&quot;response&quot;</span>)</code></pre>
-<pre><code>##         1 
-## 0.2361081</code></pre>
-<p>The predicted probability is 0.2361081.</p>
-<p>– Notice that we need to specify the type argument as “response”. What if we do not specify the type argument?</p>
-<p>Video tutorial (simple linear regression):</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/66z_MRwtFJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-
-</div>
+<div id="frequently-asked-questions" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Frequently asked questions</h1>
+<p><strong>I am getting path issues</strong></p>
+<p><em>Please check again working directory and the path of your raster file. Any typo error can cause this issue.</em></p>
+<p><strong>I am getting errors</strong></p>
+<p><em>Sometimes R packages gives you different execution errors. Our advice is to install the last R software (3.5.3) and R Studio in order to get latest functionalities and bug fixes. Also this lab has been tested entirely in the 415 lab computers. You can also take the most of that facility.</em></p>
+<p><strong>It is too slow</strong></p>
+<p><em>These are complex calculations, be patient :)</em></p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="week3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week8.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
